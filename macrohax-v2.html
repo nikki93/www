@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="">	
+<head>
+<meta charset="utf-8"/>
+<title>Macrohax v2 - nikhilesh.info</title>	
+<meta name="author" content="Nikhilesh Sigatapu">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:700,400|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://princeton.edu/~sigatapu/theme/css/main.css" type="text/css" />
+
+<!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+<link href="http://princeton.edu/~sigatapu/" type="application/atom+xml" rel="alternate" title="nikhilesh.info ATOM Feed" />
+</head>
+
+<body>		
+<header class="clearfix" role="banner">
+    <div class="wrapper">
+        <h1 class="huge"><a href="http://princeton.edu/~sigatapu">nikhilesh.info</a></h1>
+    </div>
+</header>
+
+<div class="wrapper pages">
+    <ul class="nav">
+ <li><a href="http://princeton.edu/~sigatapu/pages/about.html">about</a></li>  <li><a href="http://princeton.edu/~sigatapu/pages/projects.html">projects</a></li>         <li>&nbsp;</li>
+        <li><a href="http://princeton.edu/~sigatapu/archives.html">archive</a></li>
+        <li>&nbsp;</li>
+        <li><a href="mailto:s.nikhilesh@gmail.com">email</a></li>
+        <li><a href="https://github.com/nikki93">github</a></li>
+    </ul>
+</div>
+
+<div role="main" class="content clearfix">	
+	<article>
+		<div class="post wrapper">
+			<h1>Macrohax v2</h1>
+
+			<p>(adapted from my old website)</p>
+<p>I've finally implemented my most feared feature: A game save/load mechanism.</p>
+<p>This feature was something I'd always been afraid of. I would start working on
+my game, and someone would say, "Your game sucks! You need save/load!", but
+that would require me to redo everything I've done in a serialisable way. A
+nightmare! Sure, the games had 'jump to level', but true saving and loading
+would allow you to save at any point.</p>
+<p>Now, I use boost::serialisation coupled with NGF's 'forEachGameObject' and a
+'GameObjectRecord' data structure to bring you... NGF::Serialiser! Here's what
+it looks like:-</p>
+<div class="highlight"><pre><span class="n">NGF_SERIALISE_BEGIN</span><span class="p">(</span><span class="n">Player</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">//Because NGF::GameObject doesn&#39;t know anything about your position </span>
+    <span class="c1">//and orientation, but gives it to you when you&#39;re created. Some </span>
+    <span class="c1">//GameObjects such as &#39;sound&#39; might not need these.</span>
+    <span class="n">NGF_SERIALISE_POSITION</span><span class="p">(</span><span class="n">mNode</span><span class="o">-&gt;</span><span class="n">getPosition</span><span class="p">());</span>
+    <span class="n">NGF_SERIALISE_ROTATION</span><span class="p">(</span><span class="n">mNode</span><span class="o">-&gt;</span><span class="n">getOrientation</span><span class="p">());</span>
+
+    <span class="n">NGF_SERIALISE_AUTO</span><span class="p">(</span><span class="n">Real</span><span class="p">,</span> <span class="n">mHealth</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Yup, that's all you need to make the Player GameObject persistent. You just
+throw that into the class definition. The 'properties' (loaded from the level
+        file (which might be exported from Blender)) and the GameObject's name
+are saved too. Then, you can just do this:-</p>
+<div class="highlight"><pre><span class="c1">//For saving.</span>
+<span class="n">NGF</span><span class="o">::</span><span class="n">Serialiser</span><span class="o">::</span><span class="n">save</span><span class="p">(</span><span class="s">&quot;SaveFile&quot;</span><span class="p">);</span>
+
+<span class="c1">//For loading.</span>
+<span class="n">mGameObjectManager</span><span class="o">-&gt;</span><span class="n">destroyAll</span><span class="p">();</span>
+<span class="n">NGF</span><span class="o">::</span><span class="n">Serialiser</span><span class="o">::</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;SaveFile&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Beautiful, isn't it? :-)</p>
+			
+			
+		</div>
+	
+<div class="meta wrapper">
+	<time datetime="2009-03-22T00:00:00" pubdate>Sun 22 March 2009</time>
+	<ul class="tag clearfix">
+		<li><a href="http://princeton.edu/~sigatapu/category/coding.html">coding</a></li>
+	</ul>
+</div>	</article>	
+</div>
+
+<footer class="clearfix">
+    <div class="copy wrapper">
+        <p role="contentinfo">© 2012 Nikhilesh Sigatapu<br>
+    </div>
+</footer>
+
+<script>
+var _gaq=[['_setAccount',''],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+ g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+ s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</body>
+</html>

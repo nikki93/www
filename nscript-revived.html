@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="">	
+<head>
+<meta charset="utf-8"/>
+<title>nscript revived - nikhilesh.info</title>	
+<meta name="author" content="Nikhilesh Sigatapu">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:700,400|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://princeton.edu/~sigatapu/theme/css/main.css" type="text/css" />
+
+<!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+<link href="http://princeton.edu/~sigatapu/" type="application/atom+xml" rel="alternate" title="nikhilesh.info ATOM Feed" />
+</head>
+
+<body>		
+<header class="clearfix" role="banner">
+    <div class="wrapper">
+        <h1 class="huge"><a href="http://princeton.edu/~sigatapu">nikhilesh.info</a></h1>
+    </div>
+</header>
+
+<div class="wrapper pages">
+    <ul class="nav">
+ <li><a href="http://princeton.edu/~sigatapu/pages/about.html">about</a></li>  <li><a href="http://princeton.edu/~sigatapu/pages/projects.html">projects</a></li>         <li>&nbsp;</li>
+        <li><a href="http://princeton.edu/~sigatapu/archives.html">archive</a></li>
+        <li>&nbsp;</li>
+        <li><a href="mailto:s.nikhilesh@gmail.com">email</a></li>
+        <li><a href="https://github.com/nikki93">github</a></li>
+    </ul>
+</div>
+
+<div role="main" class="content clearfix">	
+	<article>
+		<div class="post wrapper">
+			<h1>nscript revived</h1>
+
+			<p>(adapted from my old website)</p>
+<p>In September last year, I'd written 'nscript', a simple stack based scripting
+langauge interpreter. After about two days of work, I put it <a href="http://github.com/nikki93/nscript">on
+GitHub</a>. However, it was soon forgotten as I
+got busy with school work.</p>
+<p>Recently I made a post about it on a mailing list. The post (along with
+        replies) can be found
+<a href="http://thread.gmane.org/gmane.comp.misc.suckless/3488">here</a>. Motivated by the
+feedback I received, I added a lot of features to it toward the end of August.
+The latest changes are available on GitHub.</p>
+<p>In nscript, constructs like 'assignments', 'control structures', or 'function
+definitions' which are usually special syntactical elements in other languages
+are actually high level constructs. 'Pure nscript' itself consists only of
+objects (strings, blocks, numbers), variables and the stack. Even the
+assignment built-in, '=' is an executable - it simply takes a symbol and a
+value.</p>
+<p>For example, named functions can be created by assigning blocks of code to
+variables. Even the assignment operator itself is a function that can be
+replaced by your own.</p>
+<p>nscript code looks like this:-</p>
+<div class="highlight"><pre><span class="o">{</span>
+    <span class="c">#Add last two on stack, but keep last on stack.</span>
+    rot 1 at +
+    <span class="c">#Print sum (duplicate to keep it for next time).</span>
+    dup spacePrint
+<span class="o">}</span> &amp;_fib <span class="o">=</span>
+
+<span class="o">{</span>
+    <span class="c">#Subtract 2 since we already print 0, 1 anyway.</span>
+    2 - &amp;n <span class="o">=</span>
+
+    <span class="c">#Print first two terms.</span>
+    <span class="s1">&#39;0 1 &#39;</span> print
+    <span class="c">#Put first two terms.</span>
+    0 1
+
+    <span class="c">#Run _fib n times.</span>
+    &amp;_fib n repeat
+<span class="o">}</span> &amp;fib <span class="o">=</span>
+
+25 fib
+</pre></div>
+
+
+<p>The above code prints the first 25 elements of the Fibonacci series.</p>
+<p>In nscript, everything is an object. The code '2 3' pushes integer objects 2
+and 3 onto the stack. Prepending a name with an '&amp;' pushes a 'symbol' with that
+name onto the stack. '=' takes a symbol and a value from the stack (in that
+        order) and sets a 'variable' with the name of the symbol to that value.
+The variable can then be accessed with that name. The following code thus sets
+'two' to 2:-</p>
+<div class="highlight"><pre>2 &amp;two <span class="o">=</span>
+</pre></div>
+
+
+<p>Simply a name would push the value of that variable onto the stack. 'print'
+takes the last object from the stack and prints it. So, the following code
+would print '2':-</p>
+<div class="highlight"><pre>two print
+</pre></div>
+
+
+<p>But there's a catch - If the object referred to by the variable is
+'executable', then it will be executed, instead of being pushed onto the stack.
+This is why writing 'print' prints something - It runs an executable which is a
+built-in object stored in a built-in variable called 'print'. There are more
+other such built-ins, such as '+', '-', 'repeat' etc.</p>
+<p>Code within { } will push that code onto the stack as a block, which is an
+executable. 'repeat' takes an executable and an integer 'n' and runs the
+executable n times. So, the following code prints 'Hello!' 20 times:-</p>
+<div class="highlight"><pre><span class="o">{</span> <span class="s2">&quot;Hello!\n&quot;</span> print <span class="o">}</span> 20 repeat
+</pre></div>
+
+
+<p>To prevent an executable variable from being executed by naming it, the name
+can be prepended by '&amp;'. This would create a symbol with that name. Execution
+of a symbol means executing the variable with that name. So, the following code
+prints 1 .. 10 in reverse order:-</p>
+<div class="highlight"><pre>1 <span class="o">{</span> dup 1 + <span class="o">}</span> 9 repeat
+&amp;print 10 repeat
+</pre></div>
+
+
+<p>Using the above constructs, what are usually called 'functions' in other
+languages can be created in the following way:-</p>
+<div class="highlight"><pre><span class="o">{</span> print <span class="s1">&#39; &#39;</span> print <span class="o">}</span> &amp;spacePrint <span class="o">=</span>
+<span class="s1">&#39;Hello&#39;</span> spacePrint
+1 2 3 &amp;spacePrint 3 repeat
+</pre></div>
+
+
+<p>Here we create a function 'spacePrint' to print something with a space after it
+by assigning a block to the 'spacePrint' variable.</p>
+<p>Structures such as 'if' or 'ifelse' which are usually keywords in other
+languages are implemented simply again as executables. 'if' takes an executable
+and a condition and executes the executable only if the condition is true.
+'ifelse' takes two executables, and works like if, except if the condition is
+false it executes the second condition. Here's an example ('getchar' pushes a
+        character from standard input onto the stack):-</p>
+<div class="highlight"><pre>getchar <span class="s1">&#39;Y&#39;</span> <span class="o">==</span> <span class="o">{</span> <span class="s2">&quot;Y!&quot;</span> print <span class="o">}</span> <span class="o">{</span> <span class="s2">&quot;Not Y!&quot;</span> print <span class="o">}</span> ifelse
+</pre></div>
+
+
+<p>Names need not really be alphanumeric. You can create your own '^' operator for
+exponentiation this way:-</p>
+<div class="highlight"><pre><span class="o">{</span>
+    &amp;p <span class="o">=</span> 
+    &amp;n <span class="o">=</span>
+
+    <span class="c">#Put n on the stack p times, then multiply p times. We</span>
+    <span class="c">#also put a 1 on the stack to allow for p = 0.</span>
+    1
+    <span class="o">{</span> n <span class="o">}</span> p repeat 
+    &amp;* p repeat
+<span class="o">}</span> &amp;^ <span class="o">=</span>
+
+3 4 ^ print <span class="c">#Prints 81.</span>
+</pre></div>
+
+
+<p>There are more concepts such as 'namespaces'. Do check out the nscript code,
+      it's only about 1075 lines of C. The core itself is rather small, most
+      visible functionality is implemented through built-ins.</p>
+			
+			
+		</div>
+	
+<div class="meta wrapper">
+	<time datetime="2010-10-12T00:00:00" pubdate>Tue 12 October 2010</time>
+	<ul class="tag clearfix">
+		<li><a href="http://princeton.edu/~sigatapu/category/coding.html">coding</a></li>
+	</ul>
+</div>	</article>	
+</div>
+
+<footer class="clearfix">
+    <div class="copy wrapper">
+        <p role="contentinfo">© 2012 Nikhilesh Sigatapu<br>
+    </div>
+</footer>
+
+<script>
+var _gaq=[['_setAccount',''],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+ g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+ s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</body>
+</html>

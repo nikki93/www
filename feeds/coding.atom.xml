@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>nikhilesh.info</title><link href="http://princeton.edu/~sigatapu/" rel="alternate"></link><link href="http://princeton.edu/~sigatapu/feeds/coding.atom.xml" rel="self"></link><id>http://princeton.edu/~sigatapu/</id><updated>2010-10-12T00:00:00-04:00</updated><entry><title>nscript revived</title><link href="http://princeton.edu/~sigatapu/nscript-revived.html" rel="alternate"></link><updated>2010-10-12T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2010-10-12:nscript-revived.html</id><summary type="html">&lt;p&gt;(adapted from my old website)&lt;/p&gt;
+&lt;p&gt;In September last year, I'd written 'nscript', a simple stack based scripting
+langauge interpreter. After about two days of work, I put it &lt;a href="http://github.com/nikki93/nscript"&gt;on
+GitHub&lt;/a&gt;. However, it was soon forgotten as I
+got busy with school work.&lt;/p&gt;
+&lt;p&gt;Recently I made a post about it on a mailing list. The post (along with
+        replies) can be found
+&lt;a href="http://thread.gmane.org/gmane.comp.misc.suckless/3488"&gt;here&lt;/a&gt;. Motivated by the
+feedback I received, I added a lot of features to it toward the end of August.
+The latest changes are available on GitHub.&lt;/p&gt;
+&lt;p&gt;In nscript, constructs like 'assignments', 'control structures', or 'function
+definitions' which are usually special syntactical elements in other languages
+are actually high level constructs. 'Pure nscript' itself consists only of
+objects (strings, blocks, numbers), variables and the stack. Even the
+assignment built-in, '=' is an executable - it simply takes a symbol and a
+value.&lt;/p&gt;
+&lt;p&gt;For example, named functions can be created by assigning blocks of code to
+variables. Even the assignment operator itself is a function that can be
+replaced by your own.&lt;/p&gt;
+&lt;p&gt;nscript code looks like this:-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="c"&gt;#Add last two on stack, but keep last on stack.&lt;/span&gt;
+    rot 1 at +
+    &lt;span class="c"&gt;#Print sum (duplicate to keep it for next time).&lt;/span&gt;
+    dup spacePrint
+&lt;span class="o"&gt;}&lt;/span&gt; &amp;amp;_fib &lt;span class="o"&gt;=&lt;/span&gt;
+
+&lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="c"&gt;#Subtract 2 since we already print 0, 1 anyway.&lt;/span&gt;
+    2 - &amp;amp;n &lt;span class="o"&gt;=&lt;/span&gt;
+
+    &lt;span class="c"&gt;#Print first two terms.&lt;/span&gt;
+    &lt;span class="s1"&gt;&amp;#39;0 1 &amp;#39;&lt;/span&gt; print
+    &lt;span class="c"&gt;#Put first two terms.&lt;/span&gt;
+    0 1
+
+    &lt;span class="c"&gt;#Run _fib n times.&lt;/span&gt;
+    &amp;amp;_fib n repeat
+&lt;span class="o"&gt;}&lt;/span&gt; &amp;amp;fib &lt;span class="o"&gt;=&lt;/span&gt;
+
+25 fib
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The above code prints the first 25 elements of the Fibonacci series.&lt;/p&gt;
+&lt;p&gt;In nscript, everything is an object. The code '2 3' pushes integer objects 2
+and 3 onto the stack. Prepending a name with an '&amp;amp;' pushes a 'symbol' with that
+name onto the stack. '=' takes a symbol and a value from the stack (in that
+        order) and sets a 'variable' with the name of the symbol to that value.
+The variable can then be accessed with that name. The following code thus sets
+'two' to 2:-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;2 &amp;amp;two &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Simply a name would push the value of that variable onto the stack. 'print'
+takes the last object from the stack and prints it. So, the following code
+would print '2':-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;two print
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;But there's a catch - If the object referred to by the variable is
+'executable', then it will be executed, instead of being pushed onto the stack.
+This is why writing 'print' prints something - It runs an executable which is a
+built-in object stored in a built-in variable called 'print'. There are more
+other such built-ins, such as '+', '-', 'repeat' etc.&lt;/p&gt;
+&lt;p&gt;Code within { } will push that code onto the stack as a block, which is an
+executable. 'repeat' takes an executable and an integer 'n' and runs the
+executable n times. So, the following code prints 'Hello!' 20 times:-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Hello!\n&amp;quot;&lt;/span&gt; print &lt;span class="o"&gt;}&lt;/span&gt; 20 repeat
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To prevent an executable variable from being executed by naming it, the name
+can be prepended by '&amp;amp;'. This would create a symbol with that name. Execution
+of a symbol means executing the variable with that name. So, the following code
+prints 1 .. 10 in reverse order:-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;1 &lt;span class="o"&gt;{&lt;/span&gt; dup 1 + &lt;span class="o"&gt;}&lt;/span&gt; 9 repeat
+&amp;amp;print 10 repeat
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Using the above constructs, what are usually called 'functions' in other
+languages can be created in the following way:-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt; print &lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt; print &lt;span class="o"&gt;}&lt;/span&gt; &amp;amp;spacePrint &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;#39;Hello&amp;#39;&lt;/span&gt; spacePrint
+1 2 3 &amp;amp;spacePrint 3 repeat
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here we create a function 'spacePrint' to print something with a space after it
+by assigning a block to the 'spacePrint' variable.&lt;/p&gt;
+&lt;p&gt;Structures such as 'if' or 'ifelse' which are usually keywords in other
+languages are implemented simply again as executables. 'if' takes an executable
+and a condition and executes the executable only if the condition is true.
+'ifelse' takes two executables, and works like if, except if the condition is
+false it executes the second condition. Here's an example ('getchar' pushes a
+        character from standard input onto the stack):-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;getchar &lt;span class="s1"&gt;&amp;#39;Y&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Y!&amp;quot;&lt;/span&gt; print &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Not Y!&amp;quot;&lt;/span&gt; print &lt;span class="o"&gt;}&lt;/span&gt; ifelse
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Names need not really be alphanumeric. You can create your own '^' operator for
+exponentiation this way:-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+    &amp;amp;p &lt;span class="o"&gt;=&lt;/span&gt; 
+    &amp;amp;n &lt;span class="o"&gt;=&lt;/span&gt;
+
+    &lt;span class="c"&gt;#Put n on the stack p times, then multiply p times. We&lt;/span&gt;
+    &lt;span class="c"&gt;#also put a 1 on the stack to allow for p = 0.&lt;/span&gt;
+    1
+    &lt;span class="o"&gt;{&lt;/span&gt; n &lt;span class="o"&gt;}&lt;/span&gt; p repeat 
+    &amp;amp;* p repeat
+&lt;span class="o"&gt;}&lt;/span&gt; &amp;amp;^ &lt;span class="o"&gt;=&lt;/span&gt;
+
+3 4 ^ print &lt;span class="c"&gt;#Prints 81.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There are more concepts such as 'namespaces'. Do check out the nscript code,
+      it's only about 1075 lines of C. The core itself is rather small, most
+      visible functionality is implemented through built-ins.&lt;/p&gt;</summary></entry><entry><title>Macrohax v2</title><link href="http://princeton.edu/~sigatapu/macrohax-v2.html" rel="alternate"></link><updated>2009-03-22T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2009-03-22:macrohax-v2.html</id><summary type="html">&lt;p&gt;(adapted from my old website)&lt;/p&gt;
+&lt;p&gt;I've finally implemented my most feared feature: A game save/load mechanism.&lt;/p&gt;
+&lt;p&gt;This feature was something I'd always been afraid of. I would start working on
+my game, and someone would say, "Your game sucks! You need save/load!", but
+that would require me to redo everything I've done in a serialisable way. A
+nightmare! Sure, the games had 'jump to level', but true saving and loading
+would allow you to save at any point.&lt;/p&gt;
+&lt;p&gt;Now, I use boost::serialisation coupled with NGF's 'forEachGameObject' and a
+'GameObjectRecord' data structure to bring you... NGF::Serialiser! Here's what
+it looks like:-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;NGF_SERIALISE_BEGIN&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Player&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;//Because NGF::GameObject doesn&amp;#39;t know anything about your position &lt;/span&gt;
+    &lt;span class="c1"&gt;//and orientation, but gives it to you when you&amp;#39;re created. Some &lt;/span&gt;
+    &lt;span class="c1"&gt;//GameObjects such as &amp;#39;sound&amp;#39; might not need these.&lt;/span&gt;
+    &lt;span class="n"&gt;NGF_SERIALISE_POSITION&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mNode&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;getPosition&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+    &lt;span class="n"&gt;NGF_SERIALISE_ROTATION&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mNode&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;getOrientation&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+
+    &lt;span class="n"&gt;NGF_SERIALISE_AUTO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Real&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mHealth&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Yup, that's all you need to make the Player GameObject persistent. You just
+throw that into the class definition. The 'properties' (loaded from the level
+        file (which might be exported from Blender)) and the GameObject's name
+are saved too. Then, you can just do this:-&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;//For saving.&lt;/span&gt;
+&lt;span class="n"&gt;NGF&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Serialiser&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;SaveFile&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;//For loading.&lt;/span&gt;
+&lt;span class="n"&gt;mGameObjectManager&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;destroyAll&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="n"&gt;NGF&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Serialiser&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;SaveFile&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Beautiful, isn't it? :-)&lt;/p&gt;</summary></entry></feed>
