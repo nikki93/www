@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+
+{% block content %}
+<div role="main" class="content clearfix">
+    <article class="wrapper main">
+        <h1> home </h1>
+        <p> Welcome to my site. Here you can find stuff about me, about my software
+        projects, music, and other related things. There’s also a little blog.
+
+        <p> Use the menu on the left to get around. If you’re into computer
+        programming, you might be interested in the 'github' link. It takes you
+        to my GitHub profile, where you can find up-to-date source code from my
+        projects.
+
+        <p> I'm in the process of migrating to a new website. Any posts you see
+        with a date before November 2013 are adapted from my old website.
+    </article>
+
+    <div class="wrapper main">
+        <h3> Latest Posts </h3>
+    <ol class="archive">
+    {% for article in articles %}
+        {% if loop.index < 6 %}
+        <li class="clearfix"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}"><time datetime="{{ article.date.isoformat() }}" pubdate>{{ article.locale_date }}</time> {{ article.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+    </div>
+</div>
+{% endblock content %}

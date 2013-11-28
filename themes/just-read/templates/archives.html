@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}blog - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div role="main" class="content clearfix">
+    <div class="wrapper main">
+        <h1> archive </h1>
+        <p> topics:
+        {% for category in categories|sort %}
+        <a href="{{ SITEURL }}/{{ category.0.url }}">{{ category.0 }}</a>{% if tag_cloud or not loop.last %}, {% endif %}
+        {% endfor %}
+        {% for tag in tag_cloud|sort %}
+            <a href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0 }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %} </p>
+
+        <ol class="archive">
+            {% for article in articles %}
+            <li><a href="{{ SITEURL }}/{{ article.url }}"><time datetime="{{ article.date.isoformat() }}" pubdate>{{ article.locale_date }}</time> {{ article.title }}</a></li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+{% endblock %}
+
