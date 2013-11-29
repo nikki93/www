@@ -599,6 +599,7 @@ p,
     display: block;
     float: left;
     width: 25%;
+    min-width: 152px;
   }
 }
 @media screen and (min-width: 55.5em) {
