@@ -37,9 +37,9 @@
         {% for p in PAGES %}
         {% if p.menulink %} <li><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li> {% endif %}
         {% endfor %}
-        <li>&nbsp;</li>
+        <li class="sep">&nbsp;</li>
         <li><a href="{{ SITEURL }}/archives.html">archive</a></li>
-        <li>&nbsp;</li>
+        <li class="sep">&nbsp;</li>
         <li><a href="mailto:{{ EMAIL }}">email</a></li>
         <li><a href="{{ GITHUB }}">github</a></li>
     </ul>
