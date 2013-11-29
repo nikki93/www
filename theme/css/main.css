@@ -418,6 +418,9 @@ footer {
   display: inline;
   padding-right: 10px;
 }
+.nav li.sep {
+  display: none;
+}
 .nav a {
   -webkit-transition: all 0.25s linear;
   -moz-transition: all 0.25s linear;
@@ -519,6 +522,9 @@ p[role="contentinfo"] {
 .content {
   margin: 0 5.555555555555555%;
 }
+.pages {
+  margin: 0 5.555555555555555%;
+}
 .meta {
   background: #fafafa;
   margin-top: 48px;
@@ -554,6 +560,9 @@ p,
   margin-top: 96px;
 }
 @media screen and (min-width: 45em) {
+  .pages {
+    margin: 0 0;
+  }
   header .wrapper {
     float: right;
     width: 75%;
@@ -591,6 +600,9 @@ p,
     display: block;
     padding-right: 0;
   }
+  .nav li.sep {
+    display: block;
+  }
   .archive time {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -599,6 +611,7 @@ p,
     display: block;
     float: left;
     width: 25%;
+    min-width: 152px;
   }
 }
 @media screen and (min-width: 55.5em) {
