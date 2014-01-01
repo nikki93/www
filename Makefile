@@ -15,7 +15,7 @@ FTP_TARGET_DIR=/
 SSH_HOST=nobel.princeton.edu
 SSH_PORT=22
 SSH_USER=sigatapu
-SSH_TARGET_DIR=public_html/
+SSH_TARGET_DIR=/PUBLIC_HTML/user2a/sigatapu/
 
 S3_BUCKET=my_s3_bucket
 
@@ -84,7 +84,7 @@ publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 ssh_upload: publish
-scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
+	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
 rsync_upload: publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
