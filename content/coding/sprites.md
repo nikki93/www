@@ -17,8 +17,7 @@ stored as POD structs contiguous in memory because then you can just dump it
 all into the GPU. So after reading a few of them nifty 'modern OpenGL'
 tutorials, I coded up a little demo to see how it performed.
 
-<img src="{filename}/images/sprites.png" alt="are those cookies?" style="width:
-512px;"/>
+<img class="screenshot" src="{filename}/images/sprites.png" alt="are those cookies?" />
 
 Here you see 100,000 sprites up on screen moving around in a random fashion.
 Renders at around 30fps on my little Macbook Air. Modern OpenGL is really neat

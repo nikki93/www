@@ -14,8 +14,10 @@ database.
 So I decided to try it out. Started with the sprite and transform components,
 then added save/load and also Lua scripting.
 
-<a href="{filename}/images/cgame.png"><img src="{filename}/images/cgame.png"
-alt="I really need some new sprites" style="width: 512px;"/></a>
+<a href="{filename}/images/cgame.png">
+    <img class="screenshot" src="{filename}/images/cgame.png"
+        alt="I really need some new sprites" />
+</a>
 
 In the picture above you see a test run with 30,000 entities each in
 'oscillator' and 'rotator' Lua systems that move them around. My Macbook Air
