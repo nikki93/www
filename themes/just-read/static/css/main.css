@@ -202,9 +202,8 @@ time {
   list-style: none;
 }
 .archive a {
-  border-bottom: 1px dotted #cccccc;
   display: block;
-  padding: 12px 0;
+  padding: 6px 0;
   -webkit-transition: all 0.25s linear;
   -moz-transition: all 0.25s linear;
   -o-transition: all 0.25s linear;
