@@ -8,7 +8,12 @@
 
         <ol class="archive">
             {% for article in articles %}
-            <li><a href="{{ SITEURL }}/{{ article.url }}"><time datetime="{{ article.date.isoformat() }}" pubdate>{{ article.locale_date }}</time> {{ article.title }}</a></li>
+            <li>
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">
+                    <time>{{ article.date.strftime("%d %b %Y") }}</time>
+                    {{ article.title }}
+                </a>
+            </li>
             {% endfor %}
         </ol>
     </div>
