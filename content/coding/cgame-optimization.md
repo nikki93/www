@@ -15,13 +15,13 @@ deadline. Most interesting updates:
   in use. There's already been a small update since I recorded the
   video that makes specifying frames even quicker.
 
-The focus of this blog post, however, is on a little change I made to
-the code that brought a big performance bonus. C functions of the form
-`x_y` are available as `cs.x.y` in Lua. This allows writing
-`cs.transform.rotate(...)` for `transform_rotate(...)`, which is the
-same as if transform was actually a Lua system. So Lua scripts see a
-consistent API for both Lua and C systems. This was made possible by
-the following Lua code:
+The focus of this blog post, however, is on a [small change](https://github.com/nikki93/cgame/commit/d2e0d17e344c02443c6139e0787490e1c2cf24d9)
+I made to the code that brought a big performance bonus. C functions
+of the form `x_y` are available as `cs.x.y` in Lua. This allows
+writing `cs.transform.rotate(...)` for `transform_rotate(...)`, which
+is the same as if transform was actually a Lua system. So Lua scripts
+see a consistent API for both Lua and C systems. This was made
+possible by the following Lua code:
 
     :::lua
     local systems_mt = {
