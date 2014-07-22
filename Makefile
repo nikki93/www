@@ -12,7 +12,7 @@ FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=nobel.princeton.edu
+SSH_HOST=arizona.princeton.edu
 SSH_PORT=22
 SSH_USER=sigatapu
 SSH_TARGET_DIR=/PUBLIC_HTML/user2a/sigatapu/
