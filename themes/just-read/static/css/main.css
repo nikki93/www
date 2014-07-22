@@ -173,7 +173,11 @@ blockquote {
   margin-left: -12px;
   padding-left: 6px;
 }
-pre, code, .codehilite {
+code {
+  font-family: 'Droid Sans Mono', monospace;
+  font-size: 12px;
+}
+pre, .codehilite {
   background: #262626;
   -webkit-box-shadow: inset 0 0 10px #000000;
   -moz-box-shadow: inset 0 0 10px #000000;
