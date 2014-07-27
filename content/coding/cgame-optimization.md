@@ -11,9 +11,8 @@ deadline. Most interesting updates:
   save/load data (by, for example, adding or removing properties) will
   not make old save files unusable.
 - **Animation system:**
-  [Here](https://www.youtube.com/watch?v=I0JinqJV114)'s a video if it
-  in use. There's already been a small update since I recorded the
-  video that makes specifying frames even quicker.
+  [Here](https://www.youtube.com/watch?v=4LV8jJMeuRA)'s a video if it
+  in use.
 
 The focus of this blog post, however, is on a [small change](https://github.com/nikki93/cgame/commit/d2e0d17e344c02443c6139e0787490e1c2cf24d9)
 I made to the code that brought a big performance bonus. C functions
