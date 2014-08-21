@@ -12,6 +12,7 @@ TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
 
+STATIC_PATHS = ['images', 'files']
 #THEME = '../pelican-themes/simple-bootstrap'
 THEME = 'themes/just-read'
 
