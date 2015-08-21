@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>nikhilesh.info</title><link href="http://princeton.edu/~sigatapu/" rel="alternate"></link><link href="http://princeton.edu/~sigatapu/feeds/coding.atom.xml" rel="self"></link><id>http://princeton.edu/~sigatapu/</id><updated>2015-01-03T00:00:00-05:00</updated><entry><title>lgame: cgame in lisp?</title><link href="http://princeton.edu/~sigatapu/lgame.html" rel="alternate"></link><updated>2015-01-03T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2015-01-03:lgame.html</id><summary type="html">&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/lgame.png"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/lgame.png"
+<feed xmlns="http://www.w3.org/2005/Atom"><title>nikhilesh.info</title><link href="http://nikki93.github.io/www/" rel="alternate"></link><link href="http://nikki93.github.io/www/feeds/coding.atom.xml" rel="self"></link><id>http://nikki93.github.io/www/</id><updated>2015-01-03T00:00:00-05:00</updated><entry><title>lgame: cgame in lisp?</title><link href="http://nikki93.github.io/www/lgame.html" rel="alternate"></link><updated>2015-01-03T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:nikki93.github.io/www,2015-01-03:lgame.html</id><summary type="html">&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/lgame.png"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/lgame.png"
         alt="I really need some new sprites" /&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Yup, it's happening. I've begun learning lisp (Common Lisp in
 particular) and am really liking it. It seems perfect for the
 live-coding goal of cgame-like tools. Macros, the REPL, SLIME -- it's
 all so much fun!&lt;/p&gt;
-&lt;p&gt;cgame reborn in lisp a year later? Stay tuned...&lt;/p&gt;</summary></entry><entry><title>Photon mapping ray tracer</title><link href="http://princeton.edu/~sigatapu/photon-mapper.html" rel="alternate"></link><updated>2014-11-17T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2014-11-17:photon-mapper.html</id><summary type="html">&lt;p&gt;We were required to write a &lt;a href="http://en.wikipedia.org/wiki/Photon_mapping"&gt;photon
+&lt;p&gt;cgame reborn in lisp a year later? Stay tuned...&lt;/p&gt;</summary></entry><entry><title>Photon mapping ray tracer</title><link href="http://nikki93.github.io/www/photon-mapper.html" rel="alternate"></link><updated>2014-11-17T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:nikki93.github.io/www,2014-11-17:photon-mapper.html</id><summary type="html">&lt;p&gt;We were required to write a &lt;a href="http://en.wikipedia.org/wiki/Photon_mapping"&gt;photon
 mapping&lt;/a&gt; ray tracer for a
 class I'm taking this semester, &lt;a href="http://www.cs.princeton.edu/courses/archive/fall14/cos526/"&gt;Advanced Computer
 Graphics&lt;/a&gt;. Here's
 a picture my photon mapper generated:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/render-cornell-final.jpg"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/render-cornell-final.jpg"
+&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/render-cornell-final.jpg"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/render-cornell-final.jpg"
         alt="I really need some new sprites" /&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;A visualization of some photons traced:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/scattering-cornell.png"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/scattering-cornell.png"
+&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/scattering-cornell.png"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/scattering-cornell.png"
         alt="I really need some new sprites" /&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Some photons stored at surfaces:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/mmap-cornell-both.png"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/mmap-cornell-both.png"
+&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/mmap-cornell-both.png"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/mmap-cornell-both.png"
         alt="I really need some new sprites" /&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Just the indirect lighting:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/render-cornell-indirect.jpg"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/render-cornell-indirect.jpg"
+&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/render-cornell-indirect.jpg"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/render-cornell-indirect.jpg"
         alt="I really need some new sprites" /&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Some other renders:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/render-softshadow-final.jpg"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/render-softshadow-final.jpg"
+&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/render-softshadow-final.jpg"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/render-softshadow-final.jpg"
         alt="I really need some new sprites" /&gt;
 &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/render-caustic-final.jpg"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/render-caustic-final.jpg"
+&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/render-caustic-final.jpg"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/render-caustic-final.jpg"
         alt="I really need some new sprites" /&gt;
-&lt;/a&gt;&lt;/p&gt;</summary></entry><entry><title>Reminisce: my Ludum Dare 30 entry made with cgame</title><link href="http://princeton.edu/~sigatapu/cgame-ld30.html" rel="alternate"></link><updated>2014-08-26T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2014-08-26:cgame-ld30.html</id><summary type="html">&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/cgame-ld30.png"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame-ld30.png" /&gt;
+&lt;/a&gt;&lt;/p&gt;</summary></entry><entry><title>Reminisce: my Ludum Dare 30 entry made with cgame</title><link href="http://nikki93.github.io/www/cgame-ld30.html" rel="alternate"></link><updated>2014-08-26T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:nikki93.github.io/www,2014-08-26:cgame-ld30.html</id><summary type="html">&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/cgame-ld30.png"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/cgame-ld30.png" /&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;&lt;a href="https://dl.dropboxusercontent.com/u/535792/ld30/ld30-reminisce-mac.zip"&gt;OS/X&lt;/a&gt; | &lt;a href="https://dl.dropboxusercontent.com/u/535792/ld30/ld30-reminisce-win.zip"&gt;Windows&lt;/a&gt; | &lt;a href="http://www.ludumdare.com/compo/ludum-dare-30/?action=preview&amp;amp;uid=39848"&gt;LD30&lt;/a&gt; | &lt;a href="https://github.com/nikki93/cgame/tree/ld30"&gt;Source&lt;/a&gt; | &lt;a href="https://www.youtube.com/watch?v=pZJOkldUVPA"&gt;Timelapse&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;For a while I've wanted to enter in a Ludum Dare with cgame. It'd be a
@@ -59,7 +59,7 @@ cgame. In all, a great experience. I learned a lot about games, about
 making them, good talks with the community on IRC.&lt;/p&gt;
 &lt;p&gt;I think one of cgame's top priorities next is documentation. I'll make
 some tutorials and stuff hopefully soon. Till then, play my Ludum Dare
-30 game and leave comments! :)&lt;/p&gt;</summary></entry><entry><title>cgame: 11-line optimization</title><link href="http://princeton.edu/~sigatapu/cgame-optimization.html" rel="alternate"></link><updated>2014-07-22T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2014-07-22:cgame-optimization.html</id><summary type="html">&lt;p&gt;I've continued to work on cgame since the independent work
+30 game and leave comments! :)&lt;/p&gt;</summary></entry><entry><title>cgame: 11-line optimization</title><link href="http://nikki93.github.io/www/cgame-optimization.html" rel="alternate"></link><updated>2014-07-22T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:nikki93.github.io/www,2014-07-22:cgame-optimization.html</id><summary type="html">&lt;p&gt;I've continued to work on cgame since the independent work
 deadline. Most interesting updates:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Backwards-compatible save for C systems:&lt;/strong&gt; This is more of an
@@ -128,37 +128,37 @@ was being re-created every access, so I added some memoization:&lt;/p&gt;
 
 &lt;p&gt;The results? Here's a screenshot of the FPS counter when running
 &lt;code&gt;test_huge.lua&lt;/code&gt; with 2000 blocks before the change:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/cgame-optimization-before.png"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame-optimization-before.png"
+&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/cgame-optimization-before.png"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/cgame-optimization-before.png"
         alt="I really need some new sprites" /&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And here it is after:&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/cgame-optimization-after.png"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame-optimization-after.png"
+&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/cgame-optimization-after.png"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/cgame-optimization-after.png"
         alt="I really need some new sprites" /&gt;
 &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Yup, it actually maxed out the FPS (which is capped at about 60).&lt;/p&gt;</summary></entry><entry><title>cgame progress: physics, gui, in-game editor, paper, poster</title><link href="http://princeton.edu/~sigatapu/cgame-progress.html" rel="alternate"></link><updated>2014-05-09T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2014-05-09:cgame-progress.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;Yup, it actually maxed out the FPS (which is capped at about 60).&lt;/p&gt;</summary></entry><entry><title>cgame progress: physics, gui, in-game editor, paper, poster</title><link href="http://nikki93.github.io/www/cgame-progress.html" rel="alternate"></link><updated>2014-05-09T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:nikki93.github.io/www,2014-05-09:cgame-progress.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/nikki93/cgame"&gt;source code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://princeton.edu/~sigatapu/files/cgame.pdf"&gt;paper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://princeton.edu/~sigatapu/files/cgame-poster.pdf"&gt;poster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://nikki93.github.io/www/files/cgame.pdf"&gt;paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://nikki93.github.io/www/files/cgame-poster.pdf"&gt;poster&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;It's been a while since I &lt;a href="http://princeton.edu/~sigatapu/cgame.html"&gt;last posted about
+&lt;p&gt;It's been a while since I &lt;a href="http://nikki93.github.io/www/cgame.html"&gt;last posted about
 cgame&lt;/a&gt;. I've since turned cgame into my
 independent work project for college, and made a lot of progress on
 it. It now has a bunch of new features including physics, GUI and an
 in-game editor. You can change properties and re-write scripts with
 real-time feedback while the game is running. Here's a picture:
-&lt;a href="http://princeton.edu/~sigatapu/images/cgame-progress.png"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame-progress.png" /&gt;
+&lt;a href="http://nikki93.github.io/www/images/cgame-progress.png"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/cgame-progress.png" /&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And here's a video of me making a space shooter prototype with it in an hour:
 &lt;iframe width="420" height="315" src="//www.youtube.com/embed/Lb1NWyUqAfA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;p&gt;For more information about the philosophy behind it you can check out
-the &lt;a href="http://princeton.edu/~sigatapu/files/cgame.pdf"&gt;paper&lt;/a&gt; I wrote on it (we have to
+the &lt;a href="http://nikki93.github.io/www/files/cgame.pdf"&gt;paper&lt;/a&gt; I wrote on it (we have to
 write one for independent work projects). I also made a
-&lt;a href="http://princeton.edu/~sigatapu/files/cgame-poster.pdf"&gt;poster&lt;/a&gt; for a poster presentation
+&lt;a href="http://nikki93.github.io/www/files/cgame-poster.pdf"&gt;poster&lt;/a&gt; for a poster presentation
 session we had.&lt;/p&gt;
-&lt;p&gt;Also, the source code is available on GitHub &lt;a href="https://github.com/nikki93/cgame"&gt;here&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>cgame: C entity-component-system, 2d sprites, Lua scripting, save/load</title><link href="http://princeton.edu/~sigatapu/cgame.html" rel="alternate"></link><updated>2014-01-01T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2014-01-01:cgame.html</id><summary type="html">&lt;p&gt;My &lt;a href="http://princeton.edu/~sigatapu/sprites.html"&gt;last blog post&lt;/a&gt; was about sprites in modern
+&lt;p&gt;Also, the source code is available on GitHub &lt;a href="https://github.com/nikki93/cgame"&gt;here&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>cgame: C entity-component-system, 2d sprites, Lua scripting, save/load</title><link href="http://nikki93.github.io/www/cgame.html" rel="alternate"></link><updated>2014-01-01T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:nikki93.github.io/www,2014-01-01:cgame.html</id><summary type="html">&lt;p&gt;My &lt;a href="http://nikki93.github.io/www/sprites.html"&gt;last blog post&lt;/a&gt; was about sprites in modern
 OpenGL. I realised that the whole 'sprites are POD structs contiguous in
 memory' idea lent itself to an entity-component-system model -- you just
 store all the sprites for every entity in this huge array. Transform, physics
@@ -167,8 +167,8 @@ bunch of tables and an 'entity' is just a primary key like in a relational
 database.&lt;/p&gt;
 &lt;p&gt;So I decided to try it out. Started with the sprite and transform components,
 then added save/load and also Lua scripting.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/cgame.png"&gt;
-    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame.png"
+&lt;p&gt;&lt;a href="http://nikki93.github.io/www/images/cgame.png"&gt;
+    &lt;img class="screenshot" src="http://nikki93.github.io/www/images/cgame.png"
         alt="I really need some new sprites" /&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In the picture above you see a test run with 30,000 entities each in
@@ -265,7 +265,7 @@ the cgame module in Lua is always up-to-date. You can continue adding C
 functions normally and they'll be visible from Lua. The FFI library also allows
 wrapping C structs. This allows, for example, the '+' operator for Vec2 in Lua
 (binds to 'vec2_add(...)') or any other extensions that are easier to write in
-script.&lt;/p&gt;</summary></entry><entry><title>Modern OpenGL and many, many sprites</title><link href="http://princeton.edu/~sigatapu/sprites.html" rel="alternate"></link><updated>2013-12-20T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2013-12-20:sprites.html</id><summary type="html">&lt;p&gt;UPDATE: I just put the code for the experiment below on
+script.&lt;/p&gt;</summary></entry><entry><title>Modern OpenGL and many, many sprites</title><link href="http://nikki93.github.io/www/sprites.html" rel="alternate"></link><updated>2013-12-20T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:nikki93.github.io/www,2013-12-20:sprites.html</id><summary type="html">&lt;p&gt;UPDATE: I just put the code for the experiment below on
 &lt;a href="https://github.com/nikki93/opengl"&gt;here&lt;/a&gt;. Needs SDL2, FreeImage, OpenGL to
 work, and it's in C++11 so you'll need that too. The real experiment code is in
 the 'Test' class in main.cpp, other stuff is boilerplate.&lt;/p&gt;
@@ -277,7 +277,7 @@ it's just instancing. This is especially great if all of your sprite data is
 stored as POD structs contiguous in memory because then you can just dump it
 all into the GPU. So after reading a few of them nifty 'modern OpenGL'
 tutorials, I coded up a little demo to see how it performed.&lt;/p&gt;
-&lt;p&gt;&lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/sprites.png"
+&lt;p&gt;&lt;img class="screenshot" src="http://nikki93.github.io/www/images/sprites.png"
     alt="are those cookies?" /&gt;&lt;/p&gt;
 &lt;p&gt;Here you see 100,000 sprites up on screen moving around in a random fashion.
 Renders at around 30fps on my little Macbook Air. Modern OpenGL is really neat
@@ -365,7 +365,7 @@ better names for these...&lt;/p&gt;
 to try and build a nice sprite library around it. And then an animation thing
 (just varying texcoords, right?). Then physics, networking, sound... A
 scripting layer on top.&lt;/p&gt;
-&lt;p&gt;NIH, here I come.&lt;/p&gt;</summary></entry><entry><title>Orx game engine</title><link href="http://princeton.edu/~sigatapu/orx.html" rel="alternate"></link><updated>2013-12-06T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2013-12-06:orx.html</id><summary type="html">&lt;p&gt;&lt;a href="http://orx-project.org/"&gt;Orx&lt;/a&gt; is a pretty neat little 2d game engine I found
+&lt;p&gt;NIH, here I come.&lt;/p&gt;</summary></entry><entry><title>Orx game engine</title><link href="http://nikki93.github.io/www/orx.html" rel="alternate"></link><updated>2013-12-06T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:nikki93.github.io/www,2013-12-06:orx.html</id><summary type="html">&lt;p&gt;&lt;a href="http://orx-project.org/"&gt;Orx&lt;/a&gt; is a pretty neat little 2d game engine I found
 recently after embarking upon a little quest to procrastinate on schoolwork by
 downloading and playing with open source game/graphics engines. Orx has a C
 interface and so it forces you to write nice code.&lt;/p&gt;
@@ -374,7 +374,7 @@ changed the premake4.lua files a bit and got it to work (also had to fix some
         weird glext.h typedef redefinition conflict). I put up the patch
 &lt;a href="https://gist.github.com/nikki93/7822094"&gt;here&lt;/a&gt;, and here's a picture from a
 demo:&lt;/p&gt;
-&lt;p&gt;&lt;img src="http://princeton.edu/~sigatapu/images/orx.png" alt="fiery" style="width: 512px;"/&gt;&lt;/p&gt;</summary></entry><entry><title>nscript revived</title><link href="http://princeton.edu/~sigatapu/nscript-revived.html" rel="alternate"></link><updated>2010-10-12T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2010-10-12:nscript-revived.html</id><summary type="html">&lt;p&gt;(adapted from my old website)&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://nikki93.github.io/www/images/orx.png" alt="fiery" style="width: 512px;"/&gt;&lt;/p&gt;</summary></entry><entry><title>nscript revived</title><link href="http://nikki93.github.io/www/nscript-revived.html" rel="alternate"></link><updated>2010-10-12T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:nikki93.github.io/www,2010-10-12:nscript-revived.html</id><summary type="html">&lt;p&gt;(adapted from my old website)&lt;/p&gt;
 &lt;p&gt;In September last year, I'd written 'nscript', a simple stack based scripting
 langauge interpreter. After about two days of work, I put it &lt;a href="http://github.com/nikki93/nscript"&gt;on
 GitHub&lt;/a&gt;. However, it was soon forgotten as I
@@ -496,7 +496,7 @@ exponentiation this way:-&lt;/p&gt;
 
 &lt;p&gt;There are more concepts such as 'namespaces'. Do check out the nscript code,
       it's only about 1075 lines of C. The core itself is rather small, most
-      visible functionality is implemented through built-ins.&lt;/p&gt;</summary></entry><entry><title>Macrohax v2</title><link href="http://princeton.edu/~sigatapu/macrohax-v2.html" rel="alternate"></link><updated>2009-03-22T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2009-03-22:macrohax-v2.html</id><summary type="html">&lt;p&gt;(adapted from my old website)&lt;/p&gt;
+      visible functionality is implemented through built-ins.&lt;/p&gt;</summary></entry><entry><title>Macrohax v2</title><link href="http://nikki93.github.io/www/macrohax-v2.html" rel="alternate"></link><updated>2009-03-22T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:nikki93.github.io/www,2009-03-22:macrohax-v2.html</id><summary type="html">&lt;p&gt;(adapted from my old website)&lt;/p&gt;
 &lt;p&gt;I've finally implemented my most feared feature: A game save/load mechanism.&lt;/p&gt;
 &lt;p&gt;This feature was something I'd always been afraid of. I would start working on
 my game, and someone would say, "Your game sucks! You need save/load!", but
