@@ -687,10 +687,10 @@ p,
   .post li {
     margin-bottom: 24px;
   }
-  code, .codehilite {
-    line-height: 1.5;
-    font-size: 36px;
-  }
+  /* code, .codehilite { */
+  /*   line-height: 1.5; */
+  /*   font-size: 36px; */
+  /* } */
   .post > p,
   .post blockquote,
   .post ul,
