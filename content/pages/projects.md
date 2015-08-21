@@ -11,6 +11,16 @@ of my software projects (most of them being game-related). My GitHub profile is
 code from whatever projects I put up there and you can check them out easily
 with git or by downloading an archive.
 
+### [cgame](https://github.com/nikki93/cgame)
+
+A 2d game engine and in-game editor that allows live coding and
+editing of games. The engine is written in C and supports Lua
+scripting. Provides sprite rendering with animation, GUI, physics and
+sound. Uses an entity-system model throughout and supports
+serialization of all game data. I made the Ludum Dare 30 game
+"[Reminisce](http://ludumdare.com/compo/ludum-dare-30/?action=preview&uid=39848)"
+using cgame.
+
 ### [GraLL 2]({filename}/pages/grall2.md)
 
 My latest game project. Sequel to GraLL. Features Python scripting, proper
