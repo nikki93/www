@@ -1,5 +1,403 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>nikhilesh.info</title><link href="http://princeton.edu/~sigatapu/" rel="alternate"></link><link href="http://princeton.edu/~sigatapu/feeds/all.atom.xml" rel="self"></link><id>http://princeton.edu/~sigatapu/</id><updated>2013-11-27T00:00:00-05:00</updated><entry><title>First post!</title><link href="http://princeton.edu/~sigatapu/first-post.html" rel="alternate"></link><updated>2013-11-27T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2013-11-27:first-post.html</id><summary type="html">&lt;p&gt;This is the first post on my new website! I'm using
+<feed xmlns="http://www.w3.org/2005/Atom"><title>nikhilesh.info</title><link href="http://princeton.edu/~sigatapu/" rel="alternate"></link><link href="http://princeton.edu/~sigatapu/feeds/all.atom.xml" rel="self"></link><id>http://princeton.edu/~sigatapu/</id><updated>2015-01-03T00:00:00-05:00</updated><entry><title>lgame: cgame in lisp?</title><link href="http://princeton.edu/~sigatapu/lgame.html" rel="alternate"></link><updated>2015-01-03T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2015-01-03:lgame.html</id><summary type="html">&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/lgame.png"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/lgame.png"
+        alt="I really need some new sprites" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Yup, it's happening. I've begun learning lisp (Common Lisp in
+particular) and am really liking it. It seems perfect for the
+live-coding goal of cgame-like tools. Macros, the REPL, SLIME -- it's
+all so much fun!&lt;/p&gt;
+&lt;p&gt;cgame reborn in lisp a year later? Stay tuned...&lt;/p&gt;</summary></entry><entry><title>Photon mapping ray tracer</title><link href="http://princeton.edu/~sigatapu/photon-mapper.html" rel="alternate"></link><updated>2014-11-17T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2014-11-17:photon-mapper.html</id><summary type="html">&lt;p&gt;We were required to write a &lt;a href="http://en.wikipedia.org/wiki/Photon_mapping"&gt;photon
+mapping&lt;/a&gt; ray tracer for a
+class I'm taking this semester, &lt;a href="http://www.cs.princeton.edu/courses/archive/fall14/cos526/"&gt;Advanced Computer
+Graphics&lt;/a&gt;. Here's
+a picture my photon mapper generated:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/render-cornell-final.jpg"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/render-cornell-final.jpg"
+        alt="I really need some new sprites" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A visualization of some photons traced:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/scattering-cornell.png"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/scattering-cornell.png"
+        alt="I really need some new sprites" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Some photons stored at surfaces:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/mmap-cornell-both.png"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/mmap-cornell-both.png"
+        alt="I really need some new sprites" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Just the indirect lighting:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/render-cornell-indirect.jpg"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/render-cornell-indirect.jpg"
+        alt="I really need some new sprites" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Some other renders:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/render-softshadow-final.jpg"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/render-softshadow-final.jpg"
+        alt="I really need some new sprites" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/render-caustic-final.jpg"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/render-caustic-final.jpg"
+        alt="I really need some new sprites" /&gt;
+&lt;/a&gt;&lt;/p&gt;</summary></entry><entry><title>Reminisce: my Ludum Dare 30 entry made with cgame</title><link href="http://princeton.edu/~sigatapu/cgame-ld30.html" rel="alternate"></link><updated>2014-08-26T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2014-08-26:cgame-ld30.html</id><summary type="html">&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/cgame-ld30.png"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame-ld30.png" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href="https://dl.dropboxusercontent.com/u/535792/ld30/ld30-reminisce-mac.zip"&gt;OS/X&lt;/a&gt; | &lt;a href="https://dl.dropboxusercontent.com/u/535792/ld30/ld30-reminisce-win.zip"&gt;Windows&lt;/a&gt; | &lt;a href="http://www.ludumdare.com/compo/ludum-dare-30/?action=preview&amp;amp;uid=39848"&gt;LD30&lt;/a&gt; | &lt;a href="https://github.com/nikki93/cgame/tree/ld30"&gt;Source&lt;/a&gt; | &lt;a href="https://www.youtube.com/watch?v=pZJOkldUVPA"&gt;Timelapse&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For a while I've wanted to enter in a Ludum Dare with cgame. It'd be a
+great way to see if it actually worked for rapid game development. And
+Ludum Dare needs rapid -- code, art and music in 48 hours! Few weeks
+ago I thought cgame was finally at the point that I could use it for
+one. So I did Ludum Dare 30 this past weekend.&lt;/p&gt;
+&lt;p&gt;Development went alright -- better than I expected, but not quite the
+best. I wanted to make some music and more levels, and was running out
+of time. Eventually I hit a point where I thought, "Hey, I think I
+can make it end here and have it make sense." So I just stopped
+there, cleaned up a bit, and it seemed to work out!&lt;/p&gt;
+&lt;p&gt;Also while working on this I added some little cgame features and
+fixes. It's also given me some things to think about to fix/add in
+cgame. In all, a great experience. I learned a lot about games, about
+making them, good talks with the community on IRC.&lt;/p&gt;
+&lt;p&gt;I think one of cgame's top priorities next is documentation. I'll make
+some tutorials and stuff hopefully soon. Till then, play my Ludum Dare
+30 game and leave comments! :)&lt;/p&gt;</summary></entry><entry><title>cgame: 11-line optimization</title><link href="http://princeton.edu/~sigatapu/cgame-optimization.html" rel="alternate"></link><updated>2014-07-22T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2014-07-22:cgame-optimization.html</id><summary type="html">&lt;p&gt;I've continued to work on cgame since the independent work
+deadline. Most interesting updates:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Backwards-compatible save for C systems:&lt;/strong&gt; This is more of an
+  internal thing, but basically this means changing the format of C
+  save/load data (by, for example, adding or removing properties) will
+  not make old save files unusable.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Animation system:&lt;/strong&gt;
+  &lt;a href="https://www.youtube.com/watch?v=4LV8jJMeuRA"&gt;Here&lt;/a&gt;'s a video if it
+  in use.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The focus of this blog post, however, is on a &lt;a href="https://github.com/nikki93/cgame/commit/d2e0d17e344c02443c6139e0787490e1c2cf24d9"&gt;small change&lt;/a&gt;
+I made to the code that brought a big performance bonus. C functions
+of the form &lt;code&gt;x_y&lt;/code&gt; are available as &lt;code&gt;cs.x.y&lt;/code&gt; in Lua. This allows
+writing &lt;code&gt;cs.transform.rotate(...)&lt;/code&gt; for &lt;code&gt;transform_rotate(...)&lt;/code&gt;, which
+is the same as if transform was actually a Lua system. So Lua scripts
+see a consistent API for both Lua and C systems. This was made
+possible by the following Lua code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;systems_mt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;__index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;rawget&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;nil&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+            &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;mt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="n"&gt;__index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;..&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;..&lt;/span&gt; &lt;span class="n"&gt;k2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+                &lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;setmetatable&lt;/span&gt;&lt;span class="p"&gt;({},&lt;/span&gt; &lt;span class="n"&gt;mt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;end&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;cg&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;systems&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;setmetatable&lt;/span&gt;&lt;span class="p"&gt;({},&lt;/span&gt; &lt;span class="n"&gt;systems_mt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;cs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cg&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;systems&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;So the metatable of &lt;code&gt;cs&lt;/code&gt; makes it so that accessing a non-existent
+member gives a table that concatenates the keys and returns the C
+symbol. While reviewing the code today I realized this internal table
+was being re-created every access, so I added some memoization:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;system_binds&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;systems_mt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;__index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;rawget&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;nil&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+            &lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;system_binds&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="kc"&gt;nil&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+                &lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;setmetatable&lt;/span&gt;&lt;span class="p"&gt;({},&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                    &lt;span class="n"&gt;__index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+                        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="o"&gt;..&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;..&lt;/span&gt; &lt;span class="n"&gt;k2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+                    &lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="p"&gt;})&lt;/span&gt;
+                &lt;span class="n"&gt;system_binds&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bind&lt;/span&gt;
+            &lt;span class="k"&gt;end&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;bind&lt;/span&gt;
+        &lt;span class="k"&gt;end&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;cg&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;systems&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;setmetatable&lt;/span&gt;&lt;span class="p"&gt;({},&lt;/span&gt; &lt;span class="n"&gt;systems_mt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;cs&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cg&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;systems&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The results? Here's a screenshot of the FPS counter when running
+&lt;code&gt;test_huge.lua&lt;/code&gt; with 2000 blocks before the change:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/cgame-optimization-before.png"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame-optimization-before.png"
+        alt="I really need some new sprites" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And here it is after:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/cgame-optimization-after.png"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame-optimization-after.png"
+        alt="I really need some new sprites" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Yup, it actually maxed out the FPS (which is capped at about 60).&lt;/p&gt;</summary></entry><entry><title>cgame progress: physics, gui, in-game editor, paper, poster</title><link href="http://princeton.edu/~sigatapu/cgame-progress.html" rel="alternate"></link><updated>2014-05-09T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2014-05-09:cgame-progress.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/nikki93/cgame"&gt;source code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://princeton.edu/~sigatapu/files/cgame.pdf"&gt;paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://princeton.edu/~sigatapu/files/cgame-poster.pdf"&gt;poster&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It's been a while since I &lt;a href="http://princeton.edu/~sigatapu/cgame.html"&gt;last posted about
+cgame&lt;/a&gt;. I've since turned cgame into my
+independent work project for college, and made a lot of progress on
+it. It now has a bunch of new features including physics, GUI and an
+in-game editor. You can change properties and re-write scripts with
+real-time feedback while the game is running. Here's a picture:
+&lt;a href="http://princeton.edu/~sigatapu/images/cgame-progress.png"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame-progress.png" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And here's a video of me making a space shooter prototype with it in an hour:
+&lt;iframe width="420" height="315" src="//www.youtube.com/embed/Lb1NWyUqAfA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;For more information about the philosophy behind it you can check out
+the &lt;a href="http://princeton.edu/~sigatapu/files/cgame.pdf"&gt;paper&lt;/a&gt; I wrote on it (we have to
+write one for independent work projects). I also made a
+&lt;a href="http://princeton.edu/~sigatapu/files/cgame-poster.pdf"&gt;poster&lt;/a&gt; for a poster presentation
+session we had.&lt;/p&gt;
+&lt;p&gt;Also, the source code is available on GitHub &lt;a href="https://github.com/nikki93/cgame"&gt;here&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>cgame: C entity-component-system, 2d sprites, Lua scripting, save/load</title><link href="http://princeton.edu/~sigatapu/cgame.html" rel="alternate"></link><updated>2014-01-01T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2014-01-01:cgame.html</id><summary type="html">&lt;p&gt;My &lt;a href="http://princeton.edu/~sigatapu/sprites.html"&gt;last blog post&lt;/a&gt; was about sprites in modern
+OpenGL. I realised that the whole 'sprites are POD structs contiguous in
+memory' idea lent itself to an entity-component-system model -- you just
+store all the sprites for every entity in this huge array. Transform, physics
+object and whatever other component works this way too. The game data is just a
+bunch of tables and an 'entity' is just a primary key like in a relational
+database.&lt;/p&gt;
+&lt;p&gt;So I decided to try it out. Started with the sprite and transform components,
+then added save/load and also Lua scripting.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://princeton.edu/~sigatapu/images/cgame.png"&gt;
+    &lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame.png"
+        alt="I really need some new sprites" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the picture above you see a test run with 30,000 entities each in
+'oscillator' and 'rotator' Lua systems that move them around. My Macbook Air
+can handle the above at 40fps. You can see the Lua script that makes the blocks
+in the bottom-left of the screen.&lt;/p&gt;
+&lt;p&gt;The code's on github &lt;a href="https://github.com/nikki93/cgame"&gt;here&lt;/a&gt;. I've tested it
+on Windows and Mac OS X. Needs OpenGL 3.2 to work.&lt;/p&gt;
+&lt;p&gt;Save/load was easy to implement because each system just
+serializes/deserializes its own table. So the save/load isn't entity-centric,
+it's system-centric -- you don't iterate through entites and save each one,
+instead you just save the various tables and it all works out because of
+the primary key consistency.&lt;/p&gt;
+&lt;p&gt;The whole engine is exposed to Lua script. Making the player entity you see in
+the middle of the window was as simple as,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;player&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;entity_new&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="c1"&gt;-- put it in the &amp;#39;transform&amp;#39; system so it can move, rotate&lt;/span&gt;
+&lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;transform_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;player&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;transform_set_position&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;player&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vec2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;transform_set_scale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;player&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vec2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="c1"&gt;-- twice as big&lt;/span&gt;
+
+&lt;span class="c1"&gt;-- put it in the &amp;#39;sprite&amp;#39; system so you can see it!&lt;/span&gt;
+&lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sprite_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;player&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sprite_set_cell&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;player&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vec2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;32.0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sprite_set_size&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;player&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vec2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;32.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;32.0&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;What's fun about the systems idea is if you wanted to control it by keyboard
+you just add,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keyboard_controlled_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;player&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;But if you wanted to control the camera by keyboard instead, just replace
+'player' with the camera entity in the above line. Cameras work through systems
+too -- just put anything that also has a transform in the 'camera' system and
+the game is rendered from that viewpoint with rotation and scale (scale is
+zoom). Not just add entities you can create systems in Lua too. Here's
+the code for the rotator system:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kd"&gt;local&lt;/span&gt; &lt;span class="n"&gt;tbl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;   &lt;span class="c1"&gt;-- tbl[ent] contains data for ent -- right now just speed&lt;/span&gt;
+
+&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;rotator_set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;speed&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;tbl&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;speed&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nb"&gt;math.pi&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;rotator&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;update_all&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;speed&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;pairs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tbl&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+            &lt;span class="n"&gt;cgame&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;transform_rotate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;speed&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;end&lt;/span&gt;
+    &lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The Lua script system uses LuaJIT. This makes it pretty easy to bind C
+functions to Lua through the &lt;a href="http://luajit.org/ext_ffi.html"&gt;FFI library&lt;/a&gt;. All
+symbols exported from the executable are available from LuaJIT, you just have
+to give it the C prototype. MSVC doesn't export symbols by default so you need
+__declspec(dllexport) there. cgame's script.{h,c} does some magic that makes
+this really easy -- you just need to surround your declarations in C with
+'SCRIPT(modulename, ...)' and add an 'EXPORT' in front of functions. Here's
+some examples from vec2.h and transform.h:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SCRIPT&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vec2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+
+        &lt;span class="k"&gt;typedef&lt;/span&gt; &lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="n"&gt;Vec2&lt;/span&gt; &lt;span class="n"&gt;Vec2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="k"&gt;struct&lt;/span&gt; &lt;span class="n"&gt;Vec2&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
+
+        &lt;span class="n"&gt;EXPORT&lt;/span&gt; &lt;span class="n"&gt;Vec2&lt;/span&gt; &lt;span class="nf"&gt;vec2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;float&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+        &lt;span class="n"&gt;EXPORT&lt;/span&gt; &lt;span class="n"&gt;Vec2&lt;/span&gt; &lt;span class="nf"&gt;vec2_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Vec2&lt;/span&gt; &lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Vec2&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+        &lt;span class="cm"&gt;/* ... */&lt;/span&gt;
+
+      &lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;SCRIPT&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;transform&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+
+        &lt;span class="n"&gt;EXPORT&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="n"&gt;transform_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Entity&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="n"&gt;EXPORT&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;transform_remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Entity&lt;/span&gt; &lt;span class="n"&gt;ent&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+        &lt;span class="cm"&gt;/* ... */&lt;/span&gt;
+
+      &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This also acts as a normal C declaration when #included into other files, which
+means there is no duplication. The actual declarations look like the above and
+the cgame module in Lua is always up-to-date. You can continue adding C
+functions normally and they'll be visible from Lua. The FFI library also allows
+wrapping C structs. This allows, for example, the '+' operator for Vec2 in Lua
+(binds to 'vec2_add(...)') or any other extensions that are easier to write in
+script.&lt;/p&gt;</summary></entry><entry><title>Modern OpenGL and many, many sprites</title><link href="http://princeton.edu/~sigatapu/sprites.html" rel="alternate"></link><updated>2013-12-20T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2013-12-20:sprites.html</id><summary type="html">&lt;p&gt;UPDATE: I just put the code for the experiment below on
+&lt;a href="https://github.com/nikki93/opengl"&gt;here&lt;/a&gt;. Needs SDL2, FreeImage, OpenGL to
+work, and it's in C++11 so you'll need that too. The real experiment code is in
+the 'Test' class in main.cpp, other stuff is boilerplate.&lt;/p&gt;
+&lt;p&gt;I gave in to the 'my OpenGL knowledge is old' (no more glBegin()/glEnd())
+problem and decided to try things with the new vertex buffer objects. After
+learning a bit about it, I realised it made so much sense for lots-of-sprites
+rendering. I looked around a bit and it seemed to be a standard technique --
+it's just instancing. This is especially great if all of your sprite data is
+stored as POD structs contiguous in memory because then you can just dump it
+all into the GPU. So after reading a few of them nifty 'modern OpenGL'
+tutorials, I coded up a little demo to see how it performed.&lt;/p&gt;
+&lt;p&gt;&lt;img class="screenshot" src="http://princeton.edu/~sigatapu/images/sprites.png"
+    alt="are those cookies?" /&gt;&lt;/p&gt;
+&lt;p&gt;Here you see 100,000 sprites up on screen moving around in a random fashion.
+Renders at around 30fps on my little Macbook Air. Modern OpenGL is really neat
+-- you just throw a bunch of data at the GPU very quickly and then make it do
+what you want it to do without having to conform to a weird API of setting 'pen
+color' before you 'draw a circle' or such. The GPU is all yours.&lt;/p&gt;
+&lt;p&gt;So in the above example I just have a quad mesh that's instanced a lot. Each
+instance has different position and texture coordinates. The sprites are all in
+an atlas texture which allows them all to be rendered with no state changes
+by just varying the texcoords. I draw all the sprites with a single OpenGL draw
+call (the '6' is because each quad has two triangles):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;glDrawElementsInstanced&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GL_TRIANGLES&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_UNSIGNED_INT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num_sprites&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The vertex shader operates on each vertex of the quad for each instance. Here's
+what it looks like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#version 150&lt;/span&gt;
+
+&lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="k"&gt;vec2&lt;/span&gt; &lt;span class="n"&gt;vertex&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="k"&gt;vec2&lt;/span&gt; &lt;span class="n"&gt;position&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="k"&gt;vec2&lt;/span&gt; &lt;span class="n"&gt;cell&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="k"&gt;vec2&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;out&lt;/span&gt; &lt;span class="k"&gt;vec2&lt;/span&gt; &lt;span class="n"&gt;texcoord_&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;void&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="c1"&gt;// texcoord&lt;/span&gt;
+    &lt;span class="k"&gt;vec2&lt;/span&gt; &lt;span class="n"&gt;uv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;vertex&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="k"&gt;vec2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;texcoord_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cell&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;uv&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// world vertex position&lt;/span&gt;
+    &lt;span class="k"&gt;vec2&lt;/span&gt; &lt;span class="n"&gt;worldPos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;position&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;vertex&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;gl_Position&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;vec4&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;worldPos&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;vec2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.08&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.1066666667&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;1.0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The 'vertex' attribute varies per actual vertex, while the rest vary only per
+instance. So the shader reads in slightly higher-level information (where it
+        is, etc.) about the sprite and figures it out, there's no need to do
+too much on the CPU with glPushTransform()/glTranslate() or such. The
+corresponding fragment shader is the standard texture-sampling one.&lt;/p&gt;
+&lt;p&gt;The key part of the code is where I bind the various arrays to their buffer objects.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;// get attribute locations&lt;/span&gt;
+&lt;span class="n"&gt;GLint&lt;/span&gt; &lt;span class="n"&gt;vertAttrib&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;glGetAttribLocation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;program&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;vertex&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;GLint&lt;/span&gt; &lt;span class="n"&gt;posAttrib&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;glGetAttribLocation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;program&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;position&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;GLint&lt;/span&gt; &lt;span class="n"&gt;cellAttrib&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;glGetAttribLocation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;program&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;cell&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;GLint&lt;/span&gt; &lt;span class="n"&gt;sizeAttrib&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;glGetAttribLocation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;program&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;size&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;// ...&lt;/span&gt;
+
+&lt;span class="c1"&gt;// make vbo, bind vbo attributes&lt;/span&gt;
+&lt;span class="n"&gt;glGenBuffers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;vbo&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glBindBuffer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GL_ARRAY_BUFFER&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;vbo&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;bufferData&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GL_ARRAY_BUFFER&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;quadVertices&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_STATIC_DRAW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glVertexAttribPointer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vertAttrib&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_FLOAT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_FALSE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glEnableVertexAttribArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vertAttrib&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;// make ibo, bind ibo attributes&lt;/span&gt;
+&lt;span class="n"&gt;glGenBuffers&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;ibo&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glBindBuffer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GL_ARRAY_BUFFER&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ibo&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;bufferData&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;GL_ARRAY_BUFFER&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sprites&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_DYNAMIC_DRAW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glVertexAttribPointer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;posAttrib&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_FLOAT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_FALSE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;float&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glEnableVertexAttribArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;posAttrib&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glVertexAttribDivisor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;posAttrib&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glVertexAttribPointer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cellAttrib&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_FLOAT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_FALSE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;float&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;float&lt;/span&gt;&lt;span class="p"&gt;)));&lt;/span&gt;
+&lt;span class="n"&gt;glEnableVertexAttribArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cellAttrib&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glVertexAttribDivisor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cellAttrib&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glVertexAttribPointer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sizeAttrib&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_FLOAT&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;GL_FALSE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;float&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;sizeof&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;float&lt;/span&gt;&lt;span class="p"&gt;)));&lt;/span&gt;
+&lt;span class="n"&gt;glEnableVertexAttribArray&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sizeAttrib&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;glVertexAttribDivisor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sizeAttrib&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;'vbo' here is for the quad (source for just the vertex attribute) while 'ibo'
+varies across sprites (position, cell and size). I should probably come up with
+better names for these...&lt;/p&gt;
+&lt;p&gt;In either case, I thought that was pretty cool and I feel like it might be fun
+to try and build a nice sprite library around it. And then an animation thing
+(just varying texcoords, right?). Then physics, networking, sound... A
+scripting layer on top.&lt;/p&gt;
+&lt;p&gt;NIH, here I come.&lt;/p&gt;</summary></entry><entry><title>Orx game engine</title><link href="http://princeton.edu/~sigatapu/orx.html" rel="alternate"></link><updated>2013-12-06T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2013-12-06:orx.html</id><summary type="html">&lt;p&gt;&lt;a href="http://orx-project.org/"&gt;Orx&lt;/a&gt; is a pretty neat little 2d game engine I found
+recently after embarking upon a little quest to procrastinate on schoolwork by
+downloading and playing with open source game/graphics engines. Orx has a C
+interface and so it forces you to write nice code.&lt;/p&gt;
+&lt;p&gt;I tried to compile it on OS X 10.9 initially but ran into trouble. So then I
+changed the premake4.lua files a bit and got it to work (also had to fix some
+        weird glext.h typedef redefinition conflict). I put up the patch
+&lt;a href="https://gist.github.com/nikki93/7822094"&gt;here&lt;/a&gt;, and here's a picture from a
+demo:&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://princeton.edu/~sigatapu/images/orx.png" alt="fiery" style="width: 512px;"/&gt;&lt;/p&gt;</summary></entry><entry><title>Seiklus</title><link href="http://princeton.edu/~sigatapu/seklus.html" rel="alternate"></link><updated>2013-11-29T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2013-11-29:seklus.html</id><summary type="html">&lt;p&gt;Just today I downloaded the Mac version of Game Maker to play with it (yup -
+        I'm on a Mac now, might post about it later). It's been a while since
+the &lt;a href="http://gmc.yoyogames.com/index.php?showtopic=140560#entry986864"&gt;last
+game&lt;/a&gt; I made
+in it. Also seems some people are working on &lt;a href="http://enigma-dev.org/"&gt;ENIGMA&lt;/a&gt;
+- a Game-Maker-to-C++ thing that also features an open source IDE. ENIGMA is
+pretty interesting actually. It's fun to throw in Game Maker games and see the
+weird C++ code generated after.&lt;/p&gt;
+&lt;p&gt;Anyway, then I remembered Jumper/Jumper Two and Seiklus, my favourite Game
+Maker games. The Jumper series is a classic hard-mode platformer thing like
+Super Meat Boy, Seiklus is more of a laid back exploration-discovery game. It's
+really cool and seems to have had some influence on indie platformers. In fact,
+       Matt Thorson (the creator of the Jumper series) was inspired by Seiklus
+       in his ''An Untitled Story.''&lt;/p&gt;
+&lt;p&gt;A picture from Seiklus:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Seiklus looks
+nice" src="http://www.autofish.net/clysm/art/video_games/seiklus/images/seiklus_promo01_320.png" title="Seiklus looks nice" /&gt;&lt;/p&gt;
+&lt;p&gt;Seiklus' tunes would be stuck in my head all the time while I was playing it.
+Here's some:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/1xjX84TUZZc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/e9MUtOAnfbc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Time to get Impulse Tracker running on Mac...&lt;/p&gt;</summary></entry><entry><title>First post!</title><link href="http://princeton.edu/~sigatapu/first-post.html" rel="alternate"></link><updated>2013-11-27T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2013-11-27:first-post.html</id><summary type="html">&lt;p&gt;This is the first post on my new website! I'm using
 &lt;a href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;.&lt;/p&gt;</summary></entry><entry><title>nscript revived</title><link href="http://princeton.edu/~sigatapu/nscript-revived.html" rel="alternate"></link><updated>2010-10-12T00:00:00-04:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2010-10-12:nscript-revived.html</id><summary type="html">&lt;p&gt;(adapted from my old website)&lt;/p&gt;
 &lt;p&gt;In September last year, I'd written 'nscript', a simple stack based scripting
 langauge interpreter. After about two days of work, I put it &lt;a href="http://github.com/nikki93/nscript"&gt;on

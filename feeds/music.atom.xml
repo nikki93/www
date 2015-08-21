@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>nikhilesh.info</title><link href="http://princeton.edu/~sigatapu/" rel="alternate"></link><link href="http://princeton.edu/~sigatapu/feeds/music.atom.xml" rel="self"></link><id>http://princeton.edu/~sigatapu/</id><updated>2013-11-29T00:00:00-05:00</updated><entry><title>Seiklus</title><link href="http://princeton.edu/~sigatapu/seklus.html" rel="alternate"></link><updated>2013-11-29T00:00:00-05:00</updated><author><name>Nikhilesh Sigatapu</name></author><id>tag:princeton.edu/~sigatapu,2013-11-29:seklus.html</id><summary type="html">&lt;p&gt;Just today I downloaded the Mac version of Game Maker to play with it (yup -
+        I'm on a Mac now, might post about it later). It's been a while since
+the &lt;a href="http://gmc.yoyogames.com/index.php?showtopic=140560#entry986864"&gt;last
+game&lt;/a&gt; I made
+in it. Also seems some people are working on &lt;a href="http://enigma-dev.org/"&gt;ENIGMA&lt;/a&gt;
+- a Game-Maker-to-C++ thing that also features an open source IDE. ENIGMA is
+pretty interesting actually. It's fun to throw in Game Maker games and see the
+weird C++ code generated after.&lt;/p&gt;
+&lt;p&gt;Anyway, then I remembered Jumper/Jumper Two and Seiklus, my favourite Game
+Maker games. The Jumper series is a classic hard-mode platformer thing like
+Super Meat Boy, Seiklus is more of a laid back exploration-discovery game. It's
+really cool and seems to have had some influence on indie platformers. In fact,
+       Matt Thorson (the creator of the Jumper series) was inspired by Seiklus
+       in his ''An Untitled Story.''&lt;/p&gt;
+&lt;p&gt;A picture from Seiklus:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Seiklus looks
+nice" src="http://www.autofish.net/clysm/art/video_games/seiklus/images/seiklus_promo01_320.png" title="Seiklus looks nice" /&gt;&lt;/p&gt;
+&lt;p&gt;Seiklus' tunes would be stuck in my head all the time while I was playing it.
+Here's some:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/1xjX84TUZZc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="560" height="315" src="//www.youtube.com/embed/e9MUtOAnfbc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Time to get Impulse Tracker running on Mac...&lt;/p&gt;</summary></entry></feed>

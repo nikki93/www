@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="">	
+<head>
+<meta charset="utf-8"/>
+<title>cgame: C entity-component-system, 2d sprites, Lua scripting, save/load - nikhilesh.info</title>	
+<meta name="author" content="Nikhilesh Sigatapu">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:700,400|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://princeton.edu/~sigatapu/theme/css/main.css" type="text/css" />
+
+<!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+<link href="http://princeton.edu/~sigatapu/" type="application/atom+xml" rel="alternate" title="nikhilesh.info ATOM Feed" />
+</head>
+
+<body>		
+<header class="clearfix" role="banner">
+    <div class="wrapper">
+        <h1 class="huge"><a href="http://princeton.edu/~sigatapu">nikhilesh.info</a></h1>
+    </div>
+</header>
+
+<div class="wrapper pages">
+    <ul class="nav">
+ <li><a href="http://princeton.edu/~sigatapu/pages/about.html">about</a></li>  <li><a href="http://princeton.edu/~sigatapu/pages/projects.html">projects</a></li>         <li class="sep">&nbsp;</li>
+        <li><a href="http://princeton.edu/~sigatapu/archives.html">archive</a></li>
+        <li class="sep">&nbsp;</li>
+        <li><a href="mailto:s.nikhilesh@gmail.com">email</a></li>
+        <li><a href="https://github.com/nikki93">github</a></li>
+    </ul>
+</div>
+
+<div role="main" class="content clearfix">	
+	<article>
+		<div class="post wrapper">
+			<h1>cgame: C entity-component-system, 2d sprites, Lua scripting, save/load</h1>
+
+			<p>My <a href="http://princeton.edu/~sigatapu/sprites.html">last blog post</a> was about sprites in modern
+OpenGL. I realised that the whole 'sprites are POD structs contiguous in
+memory' idea lent itself to an entity-component-system model -- you just
+store all the sprites for every entity in this huge array. Transform, physics
+object and whatever other component works this way too. The game data is just a
+bunch of tables and an 'entity' is just a primary key like in a relational
+database.</p>
+<p>So I decided to try it out. Started with the sprite and transform components,
+then added save/load and also Lua scripting.</p>
+<p><a href="http://princeton.edu/~sigatapu/images/cgame.png">
+    <img class="screenshot" src="http://princeton.edu/~sigatapu/images/cgame.png"
+        alt="I really need some new sprites" />
+</a></p>
+<p>In the picture above you see a test run with 30,000 entities each in
+'oscillator' and 'rotator' Lua systems that move them around. My Macbook Air
+can handle the above at 40fps. You can see the Lua script that makes the blocks
+in the bottom-left of the screen.</p>
+<p>The code's on github <a href="https://github.com/nikki93/cgame">here</a>. I've tested it
+on Windows and Mac OS X. Needs OpenGL 3.2 to work.</p>
+<p>Save/load was easy to implement because each system just
+serializes/deserializes its own table. So the save/load isn't entity-centric,
+it's system-centric -- you don't iterate through entites and save each one,
+instead you just save the various tables and it all works out because of
+the primary key consistency.</p>
+<p>The whole engine is exposed to Lua script. Making the player entity you see in
+the middle of the window was as simple as,</p>
+<div class="highlight"><pre><span class="kd">local</span> <span class="n">player</span> <span class="o">=</span> <span class="n">cgame</span><span class="p">.</span><span class="n">entity_new</span><span class="p">()</span>
+
+<span class="c1">-- put it in the &#39;transform&#39; system so it can move, rotate</span>
+<span class="n">cgame</span><span class="p">.</span><span class="n">transform_add</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+<span class="n">cgame</span><span class="p">.</span><span class="n">transform_set_position</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">cgame</span><span class="p">.</span><span class="n">vec2</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="n">cgame</span><span class="p">.</span><span class="n">transform_set_scale</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">cgame</span><span class="p">.</span><span class="n">vec2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="c1">-- twice as big</span>
+
+<span class="c1">-- put it in the &#39;sprite&#39; system so you can see it!</span>
+<span class="n">cgame</span><span class="p">.</span><span class="n">sprite_add</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+<span class="n">cgame</span><span class="p">.</span><span class="n">sprite_set_cell</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">cgame</span><span class="p">.</span><span class="n">vec2</span><span class="p">(</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">))</span>
+<span class="n">cgame</span><span class="p">.</span><span class="n">sprite_set_size</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">cgame</span><span class="p">.</span><span class="n">vec2</span><span class="p">(</span><span class="mf">32.0</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">))</span>
+</pre></div>
+
+
+<p>What's fun about the systems idea is if you wanted to control it by keyboard
+you just add,</p>
+<div class="highlight"><pre><span class="n">cgame</span><span class="p">.</span><span class="n">keyboard_controlled_add</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+</pre></div>
+
+
+<p>But if you wanted to control the camera by keyboard instead, just replace
+'player' with the camera entity in the above line. Cameras work through systems
+too -- just put anything that also has a transform in the 'camera' system and
+the game is rendered from that viewpoint with rotation and scale (scale is
+zoom). Not just add entities you can create systems in Lua too. Here's
+the code for the rotator system:</p>
+<div class="highlight"><pre><span class="kd">local</span> <span class="n">tbl</span> <span class="o">=</span> <span class="p">{}</span>   <span class="c1">-- tbl[ent] contains data for ent -- right now just speed</span>
+
+<span class="k">function</span> <span class="nf">rotator_set</span><span class="p">(</span><span class="n">ent</span><span class="p">,</span> <span class="n">speed</span><span class="p">)</span>
+    <span class="n">tbl</span><span class="p">[</span><span class="n">ent</span><span class="p">]</span> <span class="o">=</span> <span class="n">speed</span> <span class="ow">or</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">math.pi</span>
+<span class="k">end</span>
+
+<span class="n">cgame</span><span class="p">.</span><span class="n">add_system</span><span class="p">(</span><span class="s1">&#39;</span><span class="s">rotator&#39;</span><span class="p">,</span>
+<span class="p">{</span>
+    <span class="n">update_all</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ent</span><span class="p">,</span> <span class="n">speed</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">tbl</span><span class="p">)</span> <span class="k">do</span>
+            <span class="n">cgame</span><span class="p">.</span><span class="n">transform_rotate</span><span class="p">(</span><span class="n">ent</span><span class="p">,</span> <span class="n">speed</span> <span class="o">*</span> <span class="n">dt</span><span class="p">)</span>
+        <span class="k">end</span>
+    <span class="k">end</span><span class="p">,</span>
+<span class="p">})</span>
+</pre></div>
+
+
+<p>The Lua script system uses LuaJIT. This makes it pretty easy to bind C
+functions to Lua through the <a href="http://luajit.org/ext_ffi.html">FFI library</a>. All
+symbols exported from the executable are available from LuaJIT, you just have
+to give it the C prototype. MSVC doesn't export symbols by default so you need
+__declspec(dllexport) there. cgame's script.{h,c} does some magic that makes
+this really easy -- you just need to surround your declarations in C with
+'SCRIPT(modulename, ...)' and add an 'EXPORT' in front of functions. Here's
+some examples from vec2.h and transform.h:</p>
+<div class="highlight"><pre><span class="n">SCRIPT</span><span class="p">(</span><span class="n">vec2</span><span class="p">,</span>
+
+        <span class="k">typedef</span> <span class="k">struct</span> <span class="n">Vec2</span> <span class="n">Vec2</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="n">Vec2</span> <span class="p">{</span> <span class="kt">float</span> <span class="n">x</span><span class="p">;</span> <span class="kt">float</span> <span class="n">y</span><span class="p">;</span> <span class="p">};</span>
+
+        <span class="n">EXPORT</span> <span class="n">Vec2</span> <span class="nf">vec2</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="n">y</span><span class="p">);</span>
+
+        <span class="n">EXPORT</span> <span class="n">Vec2</span> <span class="nf">vec2_add</span><span class="p">(</span><span class="n">Vec2</span> <span class="n">u</span><span class="p">,</span> <span class="n">Vec2</span> <span class="n">v</span><span class="p">);</span>
+
+        <span class="cm">/* ... */</span>
+
+      <span class="p">)</span>
+
+<span class="n">SCRIPT</span><span class="p">(</span><span class="n">transform</span><span class="p">,</span>
+
+        <span class="n">EXPORT</span> <span class="kt">void</span> <span class="n">transform_add</span><span class="p">(</span><span class="n">Entity</span> <span class="n">ent</span><span class="p">);</span>
+        <span class="n">EXPORT</span> <span class="kt">void</span> <span class="nf">transform_remove</span><span class="p">(</span><span class="n">Entity</span> <span class="n">ent</span><span class="p">);</span>
+
+        <span class="cm">/* ... */</span>
+
+      <span class="p">)</span>
+</pre></div>
+
+
+<p>This also acts as a normal C declaration when #included into other files, which
+means there is no duplication. The actual declarations look like the above and
+the cgame module in Lua is always up-to-date. You can continue adding C
+functions normally and they'll be visible from Lua. The FFI library also allows
+wrapping C structs. This allows, for example, the '+' operator for Vec2 in Lua
+(binds to 'vec2_add(...)') or any other extensions that are easier to write in
+script.</p>
+			
+			
+		</div>
+	
+<div class="meta wrapper">
+	<time datetime="2014-01-01T00:00:00" pubdate>Wed 01 January 2014</time>
+	<ul class="tag clearfix">
+		<li><a href="http://princeton.edu/~sigatapu/category/coding.html">coding</a></li>
+	</ul>
+</div>	</article>	
+</div>
+
+<footer class="clearfix">
+    <div class="copy wrapper">
+        <p role="contentinfo">© 2013 Nikhilesh Sigatapu<br>
+    </div>
+</footer>
+
+<script>
+var _gaq=[['_setAccount',''],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+ g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+ s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</body>
+</html>

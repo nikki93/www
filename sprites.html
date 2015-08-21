@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="">	
+<head>
+<meta charset="utf-8"/>
+<title>Modern OpenGL and many, many sprites - nikhilesh.info</title>	
+<meta name="author" content="Nikhilesh Sigatapu">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:700,400|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://princeton.edu/~sigatapu/theme/css/main.css" type="text/css" />
+
+<!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+<link href="http://princeton.edu/~sigatapu/" type="application/atom+xml" rel="alternate" title="nikhilesh.info ATOM Feed" />
+</head>
+
+<body>		
+<header class="clearfix" role="banner">
+    <div class="wrapper">
+        <h1 class="huge"><a href="http://princeton.edu/~sigatapu">nikhilesh.info</a></h1>
+    </div>
+</header>
+
+<div class="wrapper pages">
+    <ul class="nav">
+ <li><a href="http://princeton.edu/~sigatapu/pages/about.html">about</a></li>  <li><a href="http://princeton.edu/~sigatapu/pages/projects.html">projects</a></li>         <li class="sep">&nbsp;</li>
+        <li><a href="http://princeton.edu/~sigatapu/archives.html">archive</a></li>
+        <li class="sep">&nbsp;</li>
+        <li><a href="mailto:s.nikhilesh@gmail.com">email</a></li>
+        <li><a href="https://github.com/nikki93">github</a></li>
+    </ul>
+</div>
+
+<div role="main" class="content clearfix">	
+	<article>
+		<div class="post wrapper">
+			<h1>Modern OpenGL and many, many sprites</h1>
+
+			<p>UPDATE: I just put the code for the experiment below on
+<a href="https://github.com/nikki93/opengl">here</a>. Needs SDL2, FreeImage, OpenGL to
+work, and it's in C++11 so you'll need that too. The real experiment code is in
+the 'Test' class in main.cpp, other stuff is boilerplate.</p>
+<p>I gave in to the 'my OpenGL knowledge is old' (no more glBegin()/glEnd())
+problem and decided to try things with the new vertex buffer objects. After
+learning a bit about it, I realised it made so much sense for lots-of-sprites
+rendering. I looked around a bit and it seemed to be a standard technique --
+it's just instancing. This is especially great if all of your sprite data is
+stored as POD structs contiguous in memory because then you can just dump it
+all into the GPU. So after reading a few of them nifty 'modern OpenGL'
+tutorials, I coded up a little demo to see how it performed.</p>
+<p><img class="screenshot" src="http://princeton.edu/~sigatapu/images/sprites.png"
+    alt="are those cookies?" /></p>
+<p>Here you see 100,000 sprites up on screen moving around in a random fashion.
+Renders at around 30fps on my little Macbook Air. Modern OpenGL is really neat
+-- you just throw a bunch of data at the GPU very quickly and then make it do
+what you want it to do without having to conform to a weird API of setting 'pen
+color' before you 'draw a circle' or such. The GPU is all yours.</p>
+<p>So in the above example I just have a quad mesh that's instanced a lot. Each
+instance has different position and texture coordinates. The sprites are all in
+an atlas texture which allows them all to be rendered with no state changes
+by just varying the texcoords. I draw all the sprites with a single OpenGL draw
+call (the '6' is because each quad has two triangles):</p>
+<div class="highlight"><pre><span class="n">glDrawElementsInstanced</span><span class="p">(</span><span class="n">GL_TRIANGLES</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">GL_UNSIGNED_INT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">num_sprites</span><span class="p">);</span>
+</pre></div>
+
+
+<p>The vertex shader operates on each vertex of the quad for each instance. Here's
+what it looks like:</p>
+<div class="highlight"><pre><span class="cp">#version 150</span>
+
+<span class="k">in</span> <span class="k">vec2</span> <span class="n">vertex</span><span class="p">;</span>
+
+<span class="k">in</span> <span class="k">vec2</span> <span class="n">position</span><span class="p">;</span>
+<span class="k">in</span> <span class="k">vec2</span> <span class="n">cell</span><span class="p">;</span>
+<span class="k">in</span> <span class="k">vec2</span> <span class="n">size</span><span class="p">;</span>
+
+<span class="k">out</span> <span class="k">vec2</span> <span class="n">texcoord_</span><span class="p">;</span>
+
+<span class="k">void</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// texcoord</span>
+    <span class="k">vec2</span> <span class="n">uv</span> <span class="o">=</span> <span class="n">vertex</span> <span class="o">+</span> <span class="k">vec2</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
+    <span class="n">texcoord_</span> <span class="o">=</span> <span class="n">cell</span> <span class="o">+</span> <span class="n">size</span> <span class="o">*</span> <span class="n">uv</span><span class="p">;</span>
+
+    <span class="c1">// world vertex position</span>
+    <span class="k">vec2</span> <span class="n">worldPos</span> <span class="o">=</span> <span class="n">position</span> <span class="o">+</span> <span class="n">vertex</span><span class="p">;</span>
+    <span class="n">gl_Position</span> <span class="o">=</span> <span class="k">vec4</span><span class="p">(</span><span class="n">worldPos</span> <span class="o">*</span> <span class="k">vec2</span><span class="p">(</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.1066666667</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The 'vertex' attribute varies per actual vertex, while the rest vary only per
+instance. So the shader reads in slightly higher-level information (where it
+        is, etc.) about the sprite and figures it out, there's no need to do
+too much on the CPU with glPushTransform()/glTranslate() or such. The
+corresponding fragment shader is the standard texture-sampling one.</p>
+<p>The key part of the code is where I bind the various arrays to their buffer objects.</p>
+<div class="highlight"><pre><span class="c1">// get attribute locations</span>
+<span class="n">GLint</span> <span class="n">vertAttrib</span> <span class="o">=</span> <span class="n">glGetAttribLocation</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="s">&quot;vertex&quot;</span><span class="p">);</span>
+<span class="n">GLint</span> <span class="n">posAttrib</span> <span class="o">=</span> <span class="n">glGetAttribLocation</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="s">&quot;position&quot;</span><span class="p">);</span>
+<span class="n">GLint</span> <span class="n">cellAttrib</span> <span class="o">=</span> <span class="n">glGetAttribLocation</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="s">&quot;cell&quot;</span><span class="p">);</span>
+<span class="n">GLint</span> <span class="n">sizeAttrib</span> <span class="o">=</span> <span class="n">glGetAttribLocation</span><span class="p">(</span><span class="n">program</span><span class="p">,</span> <span class="s">&quot;size&quot;</span><span class="p">);</span>
+
+<span class="c1">// ...</span>
+
+<span class="c1">// make vbo, bind vbo attributes</span>
+<span class="n">glGenBuffers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vbo</span><span class="p">);</span>
+<span class="n">glBindBuffer</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">vbo</span><span class="p">);</span>
+<span class="n">bufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">quadVertices</span><span class="p">,</span> <span class="n">GL_STATIC_DRAW</span><span class="p">);</span>
+<span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="n">vertAttrib</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">GL_FALSE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="n">vertAttrib</span><span class="p">);</span>
+
+<span class="c1">// make ibo, bind ibo attributes</span>
+<span class="n">glGenBuffers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ibo</span><span class="p">);</span>
+<span class="n">glBindBuffer</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">ibo</span><span class="p">);</span>
+<span class="n">bufferData</span><span class="p">(</span><span class="n">GL_ARRAY_BUFFER</span><span class="p">,</span> <span class="n">sprites</span><span class="p">,</span> <span class="n">GL_DYNAMIC_DRAW</span><span class="p">);</span>
+<span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="n">posAttrib</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">GL_FALSE</span><span class="p">,</span>
+        <span class="mi">6</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="n">posAttrib</span><span class="p">);</span>
+<span class="n">glVertexAttribDivisor</span><span class="p">(</span><span class="n">posAttrib</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="n">cellAttrib</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">GL_FALSE</span><span class="p">,</span>
+        <span class="mi">6</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">),</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">)));</span>
+<span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="n">cellAttrib</span><span class="p">);</span>
+<span class="n">glVertexAttribDivisor</span><span class="p">(</span><span class="n">cellAttrib</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">glVertexAttribPointer</span><span class="p">(</span><span class="n">sizeAttrib</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">GL_FLOAT</span><span class="p">,</span> <span class="n">GL_FALSE</span><span class="p">,</span>
+        <span class="mi">6</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">),</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">)));</span>
+<span class="n">glEnableVertexAttribArray</span><span class="p">(</span><span class="n">sizeAttrib</span><span class="p">);</span>
+<span class="n">glVertexAttribDivisor</span><span class="p">(</span><span class="n">sizeAttrib</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+
+
+<p>'vbo' here is for the quad (source for just the vertex attribute) while 'ibo'
+varies across sprites (position, cell and size). I should probably come up with
+better names for these...</p>
+<p>In either case, I thought that was pretty cool and I feel like it might be fun
+to try and build a nice sprite library around it. And then an animation thing
+(just varying texcoords, right?). Then physics, networking, sound... A
+scripting layer on top.</p>
+<p>NIH, here I come.</p>
+			
+			
+		</div>
+	
+<div class="meta wrapper">
+	<time datetime="2013-12-20T00:00:00" pubdate>Fri 20 December 2013</time>
+	<ul class="tag clearfix">
+		<li><a href="http://princeton.edu/~sigatapu/category/coding.html">coding</a></li>
+	</ul>
+</div>	</article>	
+</div>
+
+<footer class="clearfix">
+    <div class="copy wrapper">
+        <p role="contentinfo">© 2013 Nikhilesh Sigatapu<br>
+    </div>
+</footer>
+
+<script>
+var _gaq=[['_setAccount',''],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+ g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+ s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</body>
+</html>
