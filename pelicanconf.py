@@ -12,7 +12,8 @@ TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
 
-STATIC_PATHS = ['images', 'files']
+STATIC_PATHS = ['extra/CNAME', 'images', 'files']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 #THEME = '../pelican-themes/simple-bootstrap'
 THEME = 'themes/just-read'
 
