@@ -25,7 +25,7 @@
 &lt;p&gt;Lastly, I've been doing games for a while and have an accumulation of ideas in my head regarding what makes them annoying, and every decision I make sort of gives me flashbacks of past issues and a gut feeling about whether it's gonna help that issue.&lt;/p&gt;
 &lt;p&gt;Oh and, did I mention that... Games are just fun anyways? You might already know this.&lt;/p&gt;
 &lt;p&gt;Yeah, I totally wanna make game development tools. Or at least, 'interactive experience' development tools.&lt;/p&gt;
-&lt;h2&gt;(Idea) Prototype-based programming&lt;/h2&gt;
+&lt;h2&gt;(Real-ish talk) Prototype-based programming&lt;/h2&gt;
 &lt;p&gt;This is "a principle of abstraction that supports the above." The idea is: &lt;em&gt;make abstractions concrete enough&lt;/em&gt; that they can be save/loaded and live edited.&lt;/p&gt;
 &lt;p&gt;See how that makes the principle 'support the above'? In the spirit of concreteness, what I mean is: things that we think of as 'classes' and 'types' (which are abstractions) should be actual tangible entities, that you can edit and play around with, the &lt;em&gt;very same&lt;/em&gt; way you would play with 'instances' of those classes and types (their 'concretizations'). Tangible like for a sculptor with hands-on control of their art piece.&lt;/p&gt;
 &lt;p&gt;If we do this to the extent that an abstraction of an instance is literally the same 'kind of thing' as an instance (they are both now called 'entities'), then we should get this for free. They are &lt;a href="https://en.wikipedia.org/wiki/Brahman"&gt;made of the same stuff&lt;/a&gt;. The abstraction is also now clay in the sculptor's hands. You can paint the trait of 'dogness' with the same brush that you paint this dog here, but also that one there.&lt;/p&gt;
