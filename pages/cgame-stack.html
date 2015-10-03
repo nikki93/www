@@ -140,7 +140,7 @@ or add properties with defaults, so old version game save files can be loaded).<
 the systems in Lua. Only rarely do you want to write a C system, usually out of
 performance considerations or to talk to a C library. So let's look at the Lua layer.</p>
 <h3>Middle layer: The <code>animation</code> system</h3>
-<p>The <code>animation</code> gives entities a sprite-ey look, but the sprite can change over
+<p>The <code>animation</code> gives entities a sprite-y look, but the sprite can change over
 time quickly. Think Pac-Man's moving jaw. It achieves this by simply changing
 the <code>sprite</code> system <code>texcell</code> and <code>texsize</code> for the entity. The <code>animation</code>
 system actually does no drawing by itself at all! And this is achieved with the
@@ -169,10 +169,10 @@ the end):
 <iframe style="margin-top: 24px; marin-bottom: 15px" width="420" height="315" src="https://www.youtube.com/embed/4LV8jJMeuRA" frameborder="0" allowfullscreen></iframe></p>
 <p>If you are into web development, you might like
 <a href="https://github.com/nikki93/cgame/blob/ld30/data/script/cgame/animation.lua#L131">the way the GUI is specified</a>.
-It's sorta CSS-ey, but <code>cg.add</code> is just a constructor for an entity, this
+It's sorta CSS-y, but <code>cg.add</code> is just a constructor for an entity, this
 particular one happens to be in the <code>gui</code> system and has <code>padding</code> of <code>(0, 0)</code>
 and so on. The elements are automatically arranged with a basic version of
-Flexbox-ey logic.</p>
+Flexbox-y logic.</p>
 <h3>Top layer: Using it in a game</h3>
 <p>So now that we have an animation system, how do we actually use it in practice?
 <a href="https://github.com/nikki93/cgame/blob/master/test/ld30/main.lua#L353">Here's some code</a>
@@ -184,7 +184,7 @@ countdown timer <code>next</code>. If you scroll down a bit,
 <a href="https://github.com/nikki93/cgame/blob/master/test/ld30/main.lua#L368">on line 368</a>
 you'll see the code to create a bullet when it shoots, which uses the exact same
 <code>cg.add</code> function that was used to create buttons on the inspector GUI, but with
-<code>velocity</code> and other bullet-ey things. It also uses a <code>prefab</code> which is a way to
+<code>velocity</code> and other bullet-y things. It also uses a <code>prefab</code> which is a way to
 save an entity to a file (using the save/load system of course!) and specify it
 as a template for a new entity to create. This way I set up the bullet entity
 with its <code>sprite</code> or <code>animation</code> properties once visually then can make many
