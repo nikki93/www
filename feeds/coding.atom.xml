@@ -428,25 +428,25 @@ replaced by your own.&lt;/p&gt;
 &lt;p&gt;nscript code looks like this:-&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt;
     &lt;span class="c"&gt;#Add last two on stack, but keep last on stack.&lt;/span&gt;
-    rot 1 at +
+    rot &lt;span class="m"&gt;1&lt;/span&gt; at +
     &lt;span class="c"&gt;#Print sum (duplicate to keep it for next time).&lt;/span&gt;
     dup spacePrint
-&lt;span class="o"&gt;}&lt;/span&gt; &amp;amp;_fib &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;_fib&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
 
 &lt;span class="o"&gt;{&lt;/span&gt;
     &lt;span class="c"&gt;#Subtract 2 since we already print 0, 1 anyway.&lt;/span&gt;
-    2 - &amp;amp;n &lt;span class="o"&gt;=&lt;/span&gt;
+    &lt;span class="m"&gt;2&lt;/span&gt; - &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
 
     &lt;span class="c"&gt;#Print first two terms.&lt;/span&gt;
     &lt;span class="s1"&gt;&amp;#39;0 1 &amp;#39;&lt;/span&gt; print
     &lt;span class="c"&gt;#Put first two terms.&lt;/span&gt;
-    0 1
+    &lt;span class="m"&gt;0&lt;/span&gt; 1
 
     &lt;span class="c"&gt;#Run _fib n times.&lt;/span&gt;
-    &amp;amp;_fib n repeat
-&lt;span class="o"&gt;}&lt;/span&gt; &amp;amp;fib &lt;span class="o"&gt;=&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;_fib n repeat
+&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;fib&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
 
-25 fib
+&lt;span class="m"&gt;25&lt;/span&gt; fib
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -457,7 +457,7 @@ name onto the stack. '=' takes a symbol and a value from the stack (in that
         order) and sets a 'variable' with the name of the symbol to that value.
 The variable can then be accessed with that name. The following code thus sets
 'two' to 2:-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;2 &amp;amp;two &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;two&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -476,7 +476,7 @@ other such built-ins, such as '+', '-', 'repeat' etc.&lt;/p&gt;
 &lt;p&gt;Code within { } will push that code onto the stack as a block, which is an
 executable. 'repeat' takes an executable and an integer 'n' and runs the
 executable n times. So, the following code prints 'Hello!' 20 times:-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Hello!\n&amp;quot;&lt;/span&gt; print &lt;span class="o"&gt;}&lt;/span&gt; 20 repeat
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Hello!\n&amp;quot;&lt;/span&gt; print &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt; repeat
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -484,16 +484,16 @@ executable n times. So, the following code prints 'Hello!' 20 times:-&lt;/p&gt;
 can be prepended by '&amp;amp;'. This would create a symbol with that name. Execution
 of a symbol means executing the variable with that name. So, the following code
 prints 1 .. 10 in reverse order:-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;1 &lt;span class="o"&gt;{&lt;/span&gt; dup 1 + &lt;span class="o"&gt;}&lt;/span&gt; 9 repeat
-&amp;amp;print 10 repeat
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt; dup &lt;span class="m"&gt;1&lt;/span&gt; + &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="m"&gt;9&lt;/span&gt; repeat
+&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;print &lt;span class="m"&gt;10&lt;/span&gt; repeat
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Using the above constructs, what are usually called 'functions' in other
 languages can be created in the following way:-&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt; print &lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt; print &lt;span class="o"&gt;}&lt;/span&gt; &amp;amp;spacePrint &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt; print &lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt; print &lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;spacePrint&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
 &lt;span class="s1"&gt;&amp;#39;Hello&amp;#39;&lt;/span&gt; spacePrint
-1 2 3 &amp;amp;spacePrint 3 repeat
+&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;spacePrint &lt;span class="m"&gt;3&lt;/span&gt; repeat
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -512,17 +512,17 @@ false it executes the second condition. Here's an example ('getchar' pushes a
 &lt;p&gt;Names need not really be alphanumeric. You can create your own '^' operator for
 exponentiation this way:-&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;{&lt;/span&gt;
-    &amp;amp;p &lt;span class="o"&gt;=&lt;/span&gt; 
-    &amp;amp;n &lt;span class="o"&gt;=&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; 
+    &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
 
     &lt;span class="c"&gt;#Put n on the stack p times, then multiply p times. We&lt;/span&gt;
     &lt;span class="c"&gt;#also put a 1 on the stack to allow for p = 0.&lt;/span&gt;
     1
     &lt;span class="o"&gt;{&lt;/span&gt; n &lt;span class="o"&gt;}&lt;/span&gt; p repeat 
-    &amp;amp;* p repeat
-&lt;span class="o"&gt;}&lt;/span&gt; &amp;amp;^ &lt;span class="o"&gt;=&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;* p repeat
+&lt;span class="o"&gt;}&lt;/span&gt; &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;^ &lt;span class="o"&gt;=&lt;/span&gt;
 
-3 4 ^ print &lt;span class="c"&gt;#Prints 81.&lt;/span&gt;
+&lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;4&lt;/span&gt; ^ print &lt;span class="c"&gt;#Prints 81.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
