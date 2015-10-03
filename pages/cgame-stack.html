@@ -87,10 +87,10 @@ other directly and are not even aware of each other. The <code>sprite</code> sys
 'care' whether an entity in it is a monster, or a player, or a door---it just
 draws it.</p>
 <p>Systems store properties per entity and can listen for events. For example, the
-<code>sprite</code> system properties to define the image to draw an entity as, and it
-responds to the <code>draw</code> event to draw them all on screen. When you add a new
-<code>monster</code> system you don't care about <code>draw</code>---you'd just set the <code>sprite</code>
-properties and it'd happen automatically.</p>
+<code>sprite</code> system properties define the images for its entities, and it responds
+to the <code>draw</code> event to draw them all on screen. When you add a new <code>monster</code>
+system you don't care about <code>draw</code>---you'd just set the <code>sprite</code> properties and
+it'd happen automatically.</p>
 <p>Entities can be added to and removed from systems and their properties in
 systems changed on the fly. Each system handles its own save/load. Systems can
 be written in C or Lua, and in Lua they have the same interface irrespective of
