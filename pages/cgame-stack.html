@@ -102,7 +102,7 @@ automatically available.</p>
 stack' view through the <code>animation</code> system to show you how these things work out
 in practice.</p>
 <h3>Bottom layer: The <code>sprite</code> interface</h3>
-<p><a href="https://github.com/nikki93/cgame/blob/master/src/sprite.h">Here is the header file</a>
+<p><a href="https://github.com/nikki93/cgame/tree/827e7299acfb0f741c42e47518b31506f7fc8cd0/src/sprite.h">Here is the header file</a>
 defining the interface to the <code>sprite</code> system in cgame. It is written in C
 because it needs to be fast and it needs to talk to OpenGL, but that
 implementation is in <code>sprite.c</code>, this is just <code>sprite.h</code>. Note how it exposes
@@ -114,7 +114,7 @@ extra work required. Further, the properties can be set visually in the editor:
         alt="I really need some new sprites" />
 </a>
 The Lua inspector code just needed a
-<a href="https://github.com/nikki93/cgame/blob/master/data/script/cgame/edit_inspector.lua#L658">listing of the C property names</a>,
+<a href="https://github.com/nikki93/cgame/tree/827e7299acfb0f741c42e47518b31506f7fc8cd0/data/script/cgame/edit_inspector.lua#L658">listing of the C property names</a>,
 and it figured out the types by itself through reflection. Lua systems don't
 even need an explicit listing, the <code>inspector</code> system simply looks through the
 functions it exposes and looks for getters and setters.</p>
@@ -129,11 +129,11 @@ atlas used for the game in the above screenshot:</p>
         alt="I really need some new sprites" />
 </a></p>
 <p>The <code>sprite</code> implementation
-<a href="https://github.com/nikki93/cgame/blob/master/src/sprite.c#L219">uses OpenGL to draw the sprites</a>.
+<a href="https://github.com/nikki93/cgame/tree/827e7299acfb0f741c42e47518b31506f7fc8cd0/src/sprite.c#L219">uses OpenGL to draw the sprites</a>.
 You don't really have to read that code for this example, just note that this is
 the abstraction bottom. If you do check it out though, note how easy it all is:
 the C code for <code>sprite</code> is just 242 sloc, and the
-<a href="https://github.com/nikki93/cgame/blob/master/src/sprite.c#L245">save/load code</a>
+<a href="https://github.com/nikki93/cgame/tree/827e7299acfb0f741c42e47518b31506f7fc8cd0/src/sprite.c#L245">save/load code</a>
 is pretty straightforward while providing backwards-comatibility (you can drop
 or add properties with defaults, so old version game save files can be loaded).</p>
 <p>This is just a special case. When actually making a game, you want to write all
@@ -150,12 +150,12 @@ located next to each other (like the weird red diamond-shaped monster). These
 are frames of the same animation. For conveniece, the <code>animation</code> system allows
 you to just specify a start sprite and a number of frames and it'll run through
 them assuming the are next to each other in the atlas.</p>
-<p><a href="https://github.com/nikki93/cgame/blob/master/data/script/cgame/animation.lua">Here is the code</a>
+<p><a href="https://github.com/nikki93/cgame/tree/827e7299acfb0f741c42e47518b31506f7fc8cd0/data/script/cgame/animation.lua">Here is the code</a>
 for the <code>animation</code> system. Of main interest is the <code>_enter_frame(...)</code>
 function: that's what enters a new frame of the animation and you can see it
 call <code>cs.sprite.set_texcell(...)</code>.</p>
 <p>The code doesn't specify how to save or load the properties. There is some
-<a href="https://github.com/nikki93/cgame/blob/master/data/script/cgame/animation.lua#L122">special inspector code</a>
+<a href="https://github.com/nikki93/cgame/tree/827e7299acfb0f741c42e47518b31506f7fc8cd0/data/script/cgame/animation.lua#L122">special inspector code</a>
 starting at line 122 because we want a nice way to set animation strips. Systems
 get default inspectors for their normal properties (numbers, strings, 2d
 vectors, etc.), and they can specify special inspector logic on top of that if
@@ -175,13 +175,13 @@ and so on. The elements are automatically arranged with a basic version of
 Flexbox-y logic.</p>
 <h3>Top layer: Using it in a game</h3>
 <p>So now that we have an animation system, how do we actually use it in practice?
-<a href="https://github.com/nikki93/cgame/blob/master/test/ld30/main.lua#L353">Here's some code</a>
+<a href="https://github.com/nikki93/cgame/tree/827e7299acfb0f741c42e47518b31506f7fc8cd0/test/ld30/main.lua#L353">Here's some code</a>
 from my game
 <a href="http://ludumdare.com/compo/ludum-dare-30/?action=preview&amp;uid=39848">Reminise</a>
 for an enemy that sits around and shoots bullets
 periodically. The animation is played only when it shoots, which is based on the
 countdown timer <code>next</code>. If you scroll down a bit,
-<a href="https://github.com/nikki93/cgame/blob/master/test/ld30/main.lua#L368">on line 368</a>
+<a href="https://github.com/nikki93/cgame/tree/827e7299acfb0f741c42e47518b31506f7fc8cd0/test/ld30/main.lua#L368">on line 368</a>
 you'll see the code to create a bullet when it shoots, which uses the exact same
 <code>cg.add</code> function that was used to create buttons on the inspector GUI, but with
 <code>velocity</code> and other bullet-y things. It also uses a <code>prefab</code> which is a way to
@@ -189,7 +189,7 @@ save an entity to a file (using the save/load system of course!) and specify it
 as a template for a new entity to create. This way I set up the bullet entity
 with its <code>sprite</code> or <code>animation</code> properties once visually then can make many
 copies of it. Oh and on
-<a href="https://github.com/nikki93/cgame/blob/master/test/ld30/main.lua#L379">line 379</a>
+<a href="https://github.com/nikki93/cgame/tree/827e7299acfb0f741c42e47518b31506f7fc8cd0/test/ld30/main.lua#L379">line 379</a>
 <code>cg.add</code> is used for a sound. :)</p>
 <p>In this clip from the timelapse of developing Reminisce, you can see me draw the
 shooter animation, while cgame plays the animation in the game and updates it
@@ -199,7 +199,7 @@ there if not):
 <p>The shooter of course also enjoys real-time property and logic editing (for
 <code>dir</code> or <code>period</code>, for example) with automatic save/load. The only code that had to be
 written was lines
-<a href="https://github.com/nikki93/cgame/blob/master/test/ld30/main.lua#L344-L390">344 to 390</a>,
+<a href="https://github.com/nikki93/cgame/tree/827e7299acfb0f741c42e47518b31506f7fc8cd0/test/ld30/main.lua#L344-L390">344 to 390</a>,
 which I'd say is essential complexity.</p>
 <h3>Conclusion</h3>
 <p>By exploring one particular feature of cgame---animation---all the way from the
